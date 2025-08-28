@@ -578,17 +578,21 @@ navLinks.forEach(link => {
       color: white;
     }
     .home {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      min-height: 100vh;
-      padding: 0 8%;
-      flex-wrap: wrap;
-    }
-    .home-text {
-      max-width: 600px;
-      flex: 1 1 400px;
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 8%;
+  flex-wrap: wrap;
+  flex-direction: row; /* Ensure row layout */
+
+}
+.home-text {
+  max-width: 600px;
+  flex: 1 1 400px;
+  order: 1; /* Text on the left */
+
+}
     .intro {
     background-color: black; /* initial color */
     color: white; 
@@ -661,27 +665,35 @@ navLinks.forEach(link => {
       background: #9333ea;
     }
     .home-image {
-      flex: 1 1 300px;
-      text-align: center;
-      display: flex;
-      gap: 80px;
+      width: 440px;
+      height: 420px;
+  flex: 1 1 200px;
+  text-align: center;
+  order: 2; /* Image on the right */
+  display: flex;
+  justify-content: flex-end; /* Align image to right side */
+  gap: 80px;
+  transform: translateX(-200px);
+}
       
-    }
+    
     .home-image img {
-      width: 400px;
-      max-width: 100%;
-      filter: drop-shadow(0 0 20px #a855f7);
-    }
+  width: 400px;
+  max-width: 100%;
+  filter: drop-shadow(0 0 20px #a855f7);
+  transform: translateX(-30px);
+}
+
     @media (max-width: 768px) {
-      .home {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 40px 5%;
-      }
-      .home-text h1 {
-        font-size: 35px;
-      }
-    }
+  .home {
+    flex-direction: column; /* Stack vertically on small screens */
+    text-align: center;
+    padding: 40px 5%;
+  }
+  .home-text, .home-image {
+    order: unset; /* Remove ordering so it stacks naturally */
+  }
+}
     .role-text {
   font-size: 28px;         
   color: darkblue;        
@@ -723,8 +735,7 @@ navLinks.forEach(link => {
     <div class="home-image">
       <img src="https://png.pngtree.com/png-clipart/20210312/original/pngtree-web-developer-isometric-illustration-png-image_6067558.jpg" 
       alt="3D Robot">
-      <img src=" https://preview.vwthemesdemo.com/vw-lms-education-courses-pro/wp-content/themes/vw-lms-education-courses-pro/assets/images/Slider/Slider-img3.png" 
-      alt="">
+       
     </div>
   </section>
 
