@@ -23,11 +23,12 @@
 
         body {
             
-    margin: 0; /* remove default margins */
-    min-height: 90vh; /* ensure background covers full viewport */
-    background: linear-gradient(to top left, #3b82f6, pink);
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* optional: keeps gradient fixed when scrolling */
+    body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-image: url("");
+  color: white;
+}
 }
         
 
@@ -472,289 +473,360 @@
         }
     </style>
 </head>
-<body>
-       
+<body> 
 
-<!-- Matrix Canvas -->
-<div id="matrix-canvas" style="
-    position: relative;
+  <!-- nav bar -->
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: darkcyan; /* Default dark background */
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
     width: 100%;
+    background: darkblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 100;
+    height: 26px; /* Normal navbar height */
+}
+.navbar-brand {
+    color: #00ffe7;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Slide-bar button */
+#slide-bar {
+    width: 30px;
     height: 30px;
-    background: darkcyan;
-    overflow: hidden;
-">
- <div class="portfolio-content" id="portfolio-content">
-        <!-- Navbar -->
-        <nav class="navbar ">
-            <a href="#home" class="navbar-brand">Keep Coding</a>
-             </div>
-     
-    <!-- Slide bar button inside canvas -->
-    <div id="slide-bar" style="
-    position: fixed; /* change from absolute to fixed */
-    top: 5px;
-    right: 20px;
-    width: 40px;
-    height: 35px;
     background: #a855f7;
-    border-radius: 8px;
+    border-radius: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 1100;
-    padding: 8px;
     box-shadow: 0 0 10px #a855f7;
-">
-        <div style="width: 30px; height: 4px; background: white; margin: 3px 0; border-radius:2px;"></div>
-        <div style="width: 30px; height: 4px; background: white; margin: 3px 0; border-radius:2px;"></div>
-        <div style="width: 30px; height: 4px; background: white; margin: 3px 0; border-radius:2px;"></div>
-    </div>
+    position: relative;
+}
 
-    <!-- Sidebar menu inside canvas -->
-    <div id="sidebar" style="
-    position: fixed; /* fixed to viewport */
+#slide-bar div {
+    position: absolute;
+    width: 10px;       
+    height: 2px;       
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+#slide-bar div:nth-child(1) {
+    top: 8px;
+}
+ #slide-bar div:nth-child(2) {
+    top: 20px;
+}
+
+/* Transform to X */
+#slide-bar.active div:nth-child(1) {
+    transform: rotate(45deg);
+    top: 18px;
+}
+
+#slide-bar.active div:nth-child(2) {
+    transform: rotate(-45deg);
+    top: 18px;
+}
+
+/* Sidebar menu */
+#sidebar {
+    position: fixed;
     top: 0;
-    right: -250px;
-    width: 250px;
+    right: -220px;
+    width: 220px;
     height: 100%;
-    background: darkcyan;
-    padding-top: 60px;
+    background: darkblue; /* Sidebar color */
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 30px;
     transition: right 0.3s ease-in-out;
     z-index: 1000;
-">
-        
-        <a href="#sign in" style="color:white; text-decoration:none; margin-left:20px; font-size:20px;">Signin-></a>
-        <a href="#" style="color:white; text-decoration:none; margin-left:20px; font-size:20px;">Home</a>
-    <a href="#skills" style="color:white; text-decoration:none; margin-left:20px; font-size:20px;">Skills</a>
-    <a href="#projects" style="color:white; text-decoration:none; margin-left:20px; font-size:20px;">Projects</a>
-    <a href="#about" style="color:white; text-decoration:none; margin-left:20px; font-size:20px;">About Me</a>
-    <a href="#certificates" style="color:white; text-decoration:none; margin-left:20px; font-size:20px;">Certificates</a>
-    <a href="#contact" style="color:white; text-decoration:none; margin-left:20px; font-size:20px;">Contact</a>
-</div>
- </div>
+}
 
-<!-- Other page sections -->
- 
+/* Close button inside sidebar */
+#sidebar .close-btn {
+    font-size: 28px;
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    cursor: pointer;
+    margin-left: auto; /* push to the right */
+    display: block;
+}
+
+/* Sidebar links */
+#sidebar a.link {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 20px;
+    margin-top: center;
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <a href="#home" class="navbar-brand">ABHINAV</a>
+    <div id="slide-bar">
+        <div></div>
+        <div></div>
+    </div>
+</nav>
+
+<!-- Sidebar -->
+<div id="sidebar">
+  <a class="close-btn" id="close-btn">✕</a>
+  <a class="link" href="#">Home</a>
+   <a class="link" href="#about">About Me</a>
+  <a class="link" href="#skills">Skills</a>
+  <a class="link" href="#projects">Projects</a>
+  <a class="link" href="#certificates">Certificates</a>
+  <a class="link" href="#contact">Contact</a>
+</div>
 
 <script>
 const slideBar = document.getElementById("slide-bar");
 const sidebar = document.getElementById("sidebar");
+const closeBtn = document.getElementById("close-btn");
 
-// Toggle sidebar
+// Toggle sidebar with slide bar
 slideBar.addEventListener("click", () => {
-    if(sidebar.style.right === "0px"){
-        sidebar.style.right = "-250px";
-    } else {
-        sidebar.style.right = "0px";
-    }
+    sidebar.style.right = (sidebar.style.left === "0px") ? "-250px" : "0px";
+    slideBar.classList.toggle("active");
 });
 
-// Smooth scroll for sidebar links
-const navLinks = document.querySelectorAll('.navbar a');
-
-navLinks.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault(); // prevent default jump
-    const targetId = link.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    targetSection.scrollIntoView({ behavior: 'smooth' });
-  });
+// Close sidebar with ✕ button
+closeBtn.addEventListener("click", () => {
+    sidebar.style.right = "-250px";
+    slideBar.classList.remove("active");
 });
- 
 </script>
-
-
 <!-- ///Home section -->
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: darkcyan;
-      color: white;
-    }
-    .home {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 100vh;
-  padding: 0 8%;
-  flex-wrap: wrap;
-  flex-direction: row; /* Ensure row layout */
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+  }
 
-}
-.home-text {
-  max-width: 600px;
-  flex: 1 1 400px;
-  order: 1; /* Text on the left */
+  .home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 8%;
+    flex-wrap: wrap;
+    flex-direction: row;
 
-}
-    .intro {
-    background-color: black; /* initial color */
-    color: white; 
+    /* Background only for home section */
+    background-image: url("https://edu-versity.in/wp-content/uploads/2022/03/fullstack-development.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .home-text {
+    max-width: 600px;
+    flex: 1 1 400px;
+    order: 1;
+  }
+
+  .intro {
+    background-color: black;
+    color: white;
     padding: 10px 25px;
     border: none;
-    border-radius: 25px;       /* rounded edges */
+    border-radius: 25px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    animation: colorChange 4s infinite alternate; /* animation applied */
-}
-    .home-text h1 {
-      font-size: 35px;
-      margin: 10px 0;
-    }
-    .home-text h1 span {
-      color: darkblue;
-    }
-    .home-text h2 {
-      font-weight: 400;
-      margin-bottom: 25px;
-    }
-    .typing {
-      color: #a855f7;
-      border-right: 3px solid #a855f7;
-      display: inline-block;
-      animation: blink 0.7s infinite;
-    }
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-    .home-text p.desc {
-      font-size: 25px;
-      color: #bbb;
-      line-height: 1.6;
-    }
-    .social i {
-      margin: 30px 20px 25px 0;
-      font-size: 22px;
-      cursor: pointer;
-      transition: transform 0.3s, color 0.3s;
-    }
-    .social i:hover {
-      color: #a855f7;
-      transform: scale(1.2);
-    }
-    .buttons button {
-      padding: 10px 25px;
-      margin-right: 10px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .btn-outline {
-      background: #111;
-      color: white;
-      border: 1px solid #a855f7;
-      box-shadow: 0 0 8px #a855f7;
-    }
-    .btn-outline:hover {
-      background: #a855f7;
-    }
-    .btn-fill {
-      background: #a855f7;
-      color: white;
-      border: none;
-      box-shadow: 0 0 12px #a855f7;
-    }
-    .btn-fill:hover {
-      background: #9333ea;
-    }
-    .home-image {
-      width: 440px;
-      height: 420px;
-  flex: 1 1 200px;
-  text-align: center;
-  order: 2; /* Image on the right */
-  display: flex;
-  justify-content: flex-end; /* Align image to right side */
-  gap: 80px;
-  transform: translateX(-30px);
-}
-      
-    
-    .home-image img {
-  width: 400px;
-  max-width: 100%;
-  filter: drop-shadow(0 0 20px #a855f7);
-  transform: translateX(-30px);
-}
+    animation: colorChange 4s infinite alternate;
+  }
 
-    @media (max-width: 768px) {
-  .home {
-    flex-direction: column; /* Stack vertically on small screens */
+  .home-text h1 {
+    font-size: 35px;
+    margin: 10px 0;
+  }
+
+  .home-text h1 span {
+    color: darkcyan;
+  }
+
+  .home-text h2 {
+    font-weight: 400;
+    margin-bottom: 25px;
+  }
+
+  .typing {
+    color: #a855f7;
+    border-right: 3px solid #a855f7;
+    display: inline-block;
+    animation: blink 0.7s infinite;
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  .home-text p.desc {
+    font-size: 25px;
+    color: #bbb;
+    line-height: 1.6;
+  }
+
+  .social i {
+    margin: 30px 20px 25px 0;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+  }
+
+  .social i:hover {
+    color: #a855f7;
+    transform: scale(1.2);
+  }
+
+  .buttons button {
+    padding: 10px 25px;
+    margin-right: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .btn-outline {
+    background: #111;
+    color: white;
+    border: 1px solid #a855f7;
+    box-shadow: 0 0 8px #a855f7;
+  }
+
+  .btn-outline:hover {
+    background: #a855f7;
+  }
+
+  .btn-fill {
+    background: #a855f7;
+    color: white;
+    border: none;
+    box-shadow: 0 0 12px #a855f7;
+  }
+
+  .btn-fill:hover {
+    background: #9333ea;
+  }
+
+  .home-image {
+    width: 440px;
+    height: 420px;
+    flex: 1 1 200px;
     text-align: center;
-    padding: 40px 5%;
+    order: 2;
+    display: flex;
+    justify-content: flex-end;
+    gap: 80px;
+    transform: translateX(-30px);
   }
-  .home-text, .home-image {
-    order: unset; /* Remove ordering so it stacks naturally */
+
+  .home-image img {
+    width: 400px;
+    max-width: 100%;
+    filter: drop-shadow(0 0 20px #a855f7);
+    transform: translateX(-30px);
   }
-}
-    .role-text {
-  font-size: 28px;         
-  color: darkblue;        
-  font-weight: bold;     
-}
-   
-  </style>
 
-
-   <section class="home">
-    <!-- Left Side Text -->
-    <div class="home-text">
-      <button class="intro">INTRODUCTION</button>
-      <h1>Hello, It's Me <br><span>Abhinav Pandey</span></h1>
-      <h2>And I am a <span class="role-text">Web Developer|Web Designer</span></h2>
-      <p class="desc">
-        Passionate about crafting <br> 
-        responsive websites & AI to solve <br>
-        real-world problems.
-      </p>
-
-      <!-- Social Icons -->
-      <div class="social">
-        <i class="fab fa-github"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-linkedin"></i>
-         <i class="fa-brands fa-whatsapp"></i>
-      </div>
-
-      <!-- Buttons -->
-      <div class="buttons">
-        <button class="btn-outline">Recommendation</button>
-        <button class="btn-fill">Get Started ></button>
-      </div>
-    </div>
-
-    <!-- Right Side Image -->
-    <div class="home-image">
-      <img src="https://png.pngtree.com/png-clipart/20210312/original/pngtree-web-developer-isometric-illustration-png-image_6067558.jpg" 
-      alt="3D Robot">
-       
-    </div>
-  </section>
-
-  <script>
-    const typingSpan = document.querySelector(".typing");
-    const text = "Web Developer & Web Designer";
-    let index = 0;
-
-    function typeWriter() {
-      if(index < text.length){
-        typingSpan.textContent += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, 150);
-      }
+  @media (max-width: 768px) {
+    .home {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 5%;
     }
 
-    typingSpan.textContent = "";
-    typeWriter();
-  </script>
+    .home-text,
+    .home-image {
+      order: unset;
+    }
+  }
+
+  .role-text {
+    font-size: 28px;
+    color: darkcyan;
+    font-weight: bold;
+  }
+</style>
+
+<section class="home">
+  <!-- Left Side Text -->
+  <div class="home-text">
+    <button class="intro">INTRODUCTION</button>
+    <h1>Hello, It's Me <br><span>Abhinav Pandey</span></h1>
+    <h2>And I am a <span class="role-text">Web Developer|Web Designer</span></h2>
+    <p class="desc">
+      Passionate about crafting <br>
+      responsive websites & AI to solve <br>
+      real-world problems.
+    </p>
+
+    <!-- Social Icons -->
+    <div class="social">
+      <i class="fab fa-github"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-linkedin"></i>
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button class="btn-outline">Recommendation</button>
+      <button class="btn-fill">Get Started ></button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const typingSpan = document.querySelector(".typing");
+  const text = "Web Developer & Web Designer";
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      typingSpan.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 150);
+    }
+  }
+
+  typingSpan.textContent = "";
+  typeWriter();
+</script>
+
+
+
+
+
 <!-- About section -->
           <section class="about-section" id="about">
           <div class="about-container">
@@ -1267,22 +1339,18 @@ document.querySelectorAll('.social-item').forEach(item => {
         </section>
 
         <!-- Footer -->
-        <footer class="footer">
-            <p>© 2025 Abhinav Pandey. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="https://github.com/Abhinav1901498" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/abhinav-pandey-b499532b5" target="_blank">LinkedIn</a>
-                <a href="https://wa.me/9580363258" target="_blank">WhatsApp</a>
-            </div>
-        </footer>
-
-        <!-- Scroll to Top Button -->
-        <div class="scroll-to-top" id="scrollToTop">
-            <i class="fas fa-arrow-up"></i>
-        </div>
+        <footer class="footer" style="background: gray; color: white; text-align: center; padding: 20px;">
+    <p>© 2025 Abhinav Pandey. All rights reserved.</p>
+    <div class="footer-links" style="margin-top: 10px;">
+        <!-- Download button -->
+        <a href="https://drive.google.com/file/d/1G_EVke0TrUNuE1wVl6OFO_AdsD1TX1Yn/view?usp=drive_link" download>
+            <button style="padding: 10px 20px; background-color: darkcyan; color: darkblue; border: none; border-radius: 5px; cursor: pointer;">
+                Download Resume
+            </button>
+        </a>
     </div>
-
-    <script>
+</footer>
+     <script>
         // Initialize ScrollReveal
         ScrollReveal({ reset: false, distance: '60px', duration: 1000, delay: 200 });
 
@@ -1327,40 +1395,6 @@ document.querySelectorAll('.social-item').forEach(item => {
         ScrollReveal().reveal('.get-in-touch-form button', { origin: 'bottom', distance: '80px', duration: 1500, delay: 500 });
         ScrollReveal().reveal('.footer p', { origin: 'bottom', distance: '50px', duration: 1200, delay: 200 });
         ScrollReveal().reveal('.footer-links a', { origin: 'bottom', distance: '50px', duration: 1200, delay: 300, interval: 100 });
-
-
-
-
-        // Typing Animation
-        const typingText = document.querySelector('.typing');
-        const phrases = ['Hi, I\'m Abhinav ', 'Web Developer',  ' Building future ', 'Coding with Passion'];
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-function type() {
-            const currentPhrase = phrases[phraseIndex];
-            if (!isDeleting) {
-                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-                if (charIndex > currentPhrase.length) {
-                    isDeleting = true;
-                    setTimeout(type, 1500);
-                    return;
-                }
-            } else {
-                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-                if (charIndex < 0) {
-                    isDeleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                }
-            }
-            setTimeout(type, isDeleting ? 50 : 100);
-        }
-
-        // Start typing animation on page load
-        setTimeout(type, 1000);
-
         // Smooth scrolling for navbar links
         document.querySelectorAll('.navbar-links a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
