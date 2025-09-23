@@ -640,7 +640,7 @@ closeBtn.addEventListener("click", () => {
     justify-content: space-between;
     align-items: center;
     min-height: 100vh;
-    padding: 0 8%;
+    padding: 0 12%;
     flex-wrap: wrap;
     flex-direction: row;
 
@@ -682,7 +682,8 @@ closeBtn.addEventListener("click", () => {
   }
 }
 
-  .intro {
+  /* Button default style */
+.intro {
     background-color: black;
     color: white;
     padding: 10px 25px;
@@ -691,8 +692,25 @@ closeBtn.addEventListener("click", () => {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Color-changing animation */
+@keyframes colorChange {
+    0% { background-color: black; color: white; }
+    25% { background-color: darkcyan; color: black; }
+    50% { background-color: purple; color: white; }
+    75% { background-color: orange; color: black; }
+    100% { background-color: black; color: white; }
+}
+
+/* Start animation on click */
+.intro:active {
+    animation: colorChange 2s infinite;
+}
+.intro {
     animation: colorChange 4s infinite alternate;
-  }
+}
 
   .home-text h1 {
     font-size: 35px;
@@ -828,7 +846,7 @@ closeBtn.addEventListener("click", () => {
       <a href="https://github.com/Abhinav1901498"><i class="fab fa-github"></i></a>
       <a href="https://twitter.com/@pandeyabhi3150"><i class="fab fa-twitter"></i></a>
       <a href="https://facebook.com/YourUsername"><i class="fab fa-facebook"></i></a>
-      <a href="https://linkedin.com/in/abhinav-pandey-b99532b5"><i class="fab fa-linkedin"></i></a>
+      <a href="https://linkedin.com/in/abhinav-pandey-b499532b5"><i class="fab fa-linkedin"></i></a>
       <a href="https://wa.me/9580363258"><i class="fab fa-whatsapp"></i></a>
     </div>
 
@@ -847,7 +865,6 @@ closeBtn.addEventListener("click", () => {
 
   <!-- Right Side Image -->
   <div class="home-image">
-    <img src="https://edu-versity.in/wp-content/uploads/2022/03/fullstack-development.png" alt="Abhinav Pandey">
   </div>
 </section>
 <script>
@@ -875,7 +892,7 @@ closeBtn.addEventListener("click", () => {
           <section class="about-section" id="about">
           <div class="about-container">
         <div class="about-image">
-            <img src="https://preview.vwthemesdemo.com/vw-lms-education-courses-pro/wp-content/themes/vw-lms-education-courses-pro/assets/images/Slider/Slider-img3.png" 
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQH5qgfXUmMfzg/profile-displayphoto-scale_200_200/B56Zisw2puG0AY-/0/1755245148959?e=1761782400&v=beta&t=X_fvcULxY5xQZolPq-UkjzCylpf-tZVM40dRw75L37o" 
             alt="Abhinav Pandey">
         </div>
         <div class="about-content">
@@ -906,8 +923,8 @@ closeBtn.addEventListener("click", () => {
   justify-content: center;
 }
  .about-image img {
-  max-width: 420px; /* set a limit so it doesn't grow too big */
-  height: auto;
+  max-width: 420px;  
+  height: 270px;
   display: square;
 }
 
@@ -958,7 +975,7 @@ closeBtn.addEventListener("click", () => {
 
   .about-image img {
     width: 150px;
-    height: 150px;
+    height: 200px;
   }
 
   .about-content {
@@ -1319,25 +1336,31 @@ document.querySelectorAll('.social-item').forEach(item => {
                     <i class="fas fa-laptop-code"></i>
                     <h4>Web Development</h4>
                     <p>Completed a 2-month internship on modern web technologies including HTML, CSS.</p>
-                    <a href="https://drive.google.com/file/d/1Juh_3SC8eAP2HkQtLnEY2NEYhVVsrVQ8/view?usp=drive_link" class="cert-button" target="_blank">View Certificate</a>
+                    <a href="https://drive.google.com/file/d/1Juh_3SC8eAP2HkQtLnEY2NEYhVVsrVQ8/view?usp=drive_link" class="cert-button">View Certificate</a>
                 </div>
                 <div class="cert-card">
                     <i class="fas fa-brain"></i>
                     <h4>AI Agent For Beginners</h4>
                     <p>Demonstrated initiative in deepening AI skills and advancing career growth.</p>
-                    <a href="https://drive.google.com/file/d/1A6a88VgQMGmjSQ7NK9L4vdm4UnWWBgag/view?usp=drive_link" class="cert-button" target="_blank">View Certificate</a>
+                    <a href="https://drive.google.com/file/d/1A6a88VgQMGmjSQ7NK9L4vdm4UnWWBgag/view?usp=drive_link" class="cert-button">View Certificate</a>
                 </div>
                 <div class="cert-card">
                     <i class="fas fa-rocket"></i>
                     <h4>Technology Job Simulation</h4>
                     <p>Successfully completed Deloitte Technology Job Simulation certificate.</p>
-                    <a href="https://drive.google.com/file/d/1OYhgPQTyQ9vM4-A6sK02sHywAmOEpAbl/view?usp=drive_link" class="cert-button" target="_blank">View Certificate</a>
+                    <a href="https://drive.google.com/file/d/1OYhgPQTyQ9vM4-A6sK02sHywAmOEpAbl/view?usp=drive_link" class="cert-button">View Certificate</a>
                 </div>
                 <div class="cert-card">
                     <i class="fas fa-database"></i>
                     <h4>HackerRank SQL (Basic)</h4>
                     <p>Completed HackerRank SQL (Basic) certification, showcasing database skills.</p>
-                    <a href="https://drive.google.com/file/d/16GM48QMwm4eo3Bt-5WL9VnnOo7fqO6P6/view?usp=drive_link" class="cert-button" target="_blank">View Certificate</a>
+                    <a href="https://drive.google.com/file/d/16GM48QMwm4eo3Bt-5WL9VnnOo7fqO6P6/view?usp=drive_link" class="cert-button">View Certificate</a>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-database"></i>
+                    <h4>Bhartiya Antariksh Hackathon</h4>
+                    <p>Participate in Bhartiya Antariksh Hackathon and earn a Certificate</p>
+                    <a href="https://drive.google.com/file/d/1aecj7It6nsHr1z17-VI9mUV7K-oKHl16/view?usp=drive_link" class="cert-button">View Certificate</a>
                 </div>
             </div>
         </section>
@@ -1354,17 +1377,17 @@ document.querySelectorAll('.social-item').forEach(item => {
                 <div class="contact-card">
                     <img src="https://img.icons8.com/fluency/96/github.png" alt="GitHub">
                     <h4>GitHub</h4>
-                    <p><a href="https://github.com/Abhinav1901498" target="_blank">Abhinav1901498</a></p>
+                    <p><a href="https://github.com/Abhinav1901498">Abhinav1901498</a></p>
                 </div>
                 <div class="contact-card">
                     <img src="https://img.icons8.com/fluency/96/linkedin.png" alt="LinkedIn">
                     <h4>LinkedIn</h4>
-                    <p><a href="https://linkedin.com/in/abhinav-pandey-b499532b5" target="_blank">abhinav-pandey-b499532b5</a></p>
+                    <p><a href="https://linkedin.com/in/abhinav-pandey-b499532b5">abhinav-pandey-b499532b5</a></p>
                 </div>
                 <div class="contact-card">
                     <img src="https://img.icons8.com/fluency/96/whatsapp.png" alt="WhatsApp">
                     <h4>WhatsApp</h4>
-                    <p><a href="https://wa.me/9580363258" target="_blank">9580363258</a></p>
+                    <p><a href="https://wa.me/9580363258">9580363258</a></p>
                 </div>
             </div>
         </section>
