@@ -509,7 +509,7 @@ body {
     width: 30px;
     height: 30px;
     background: #a855f7;
-    border-radius: 50%;
+    border-radius: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -554,7 +554,7 @@ body {
     width: 220px;
     height: 100%;
     background: darkblue; /* Sidebar color */
-    padding-top: 20px;
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -567,7 +567,7 @@ body {
     font-size: 28px;
     color: white;
     text-decoration: none;
-    margin-left: 60px;
+    margin-right: 20px;
     cursor: pointer;
     margin-left: auto; /* push to the right */
     display: block;
@@ -577,8 +577,8 @@ body {
 #sidebar a.link {
     color: white;
     text-decoration: none;
-    margin-right: 20px;
-    font-size: 20px;
+    margin-left: 30px;
+    font-size: 23px;
     margin-top: center;
     display: block;
 }
@@ -623,6 +623,10 @@ closeBtn.addEventListener("click", () => {
     slideBar.classList.remove("active");
 });
 </script>
+
+
+
+
 <!-- ///Home section -->
 <style>
   body {
@@ -646,12 +650,37 @@ closeBtn.addEventListener("click", () => {
     background-position: center;
     background-repeat: no-repeat;
   }
+      
 
-  .home-text {
-    max-width: 600px;
-    flex: 1 1 400px;
-    order: 1;
+.home-text {
+  max-width: 600px;
+  flex: 1 1 400px;
+}
+
+.home-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home-image img {
+  width: 400px;
+  max-width: 100%;
+  filter: drop-shadow(0 0 20px #a855f7);
+}
+
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 5%;
   }
+
+  .home-image {
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
 
   .intro {
     background-color: black;
@@ -677,6 +706,7 @@ closeBtn.addEventListener("click", () => {
   .home-text h2 {
     font-weight: 400;
     margin-bottom: 25px;
+    font-size: 20px;
   }
 
   .typing {
@@ -703,10 +733,7 @@ closeBtn.addEventListener("click", () => {
     transition: transform 0.3s, color 0.3s;
   }
 
-  .social i:hover {
-    color: #a855f7;
-    transform: scale(1.2);
-  }
+  
 
   .buttons button {
     padding: 10px 25px;
@@ -739,22 +766,22 @@ closeBtn.addEventListener("click", () => {
   }
 
   .home-image {
-    width: 440px;
-    height: 420px;
-    flex: 1 1 200px;
+    width: 450px;
+    height: 520px;
+    flex: 1 1 150px;
     text-align: center;
     order: 2;
     display: flex;
     justify-content: flex-end;
     gap: 80px;
-    transform: translateX(-30px);
+    transform: translateX(-100px);
   }
 
   .home-image img {
     width: 400px;
     max-width: 100%;
     filter: drop-shadow(0 0 20px #a855f7);
-    transform: translateX(-30px);
+    transform: translateX(-100px);
   }
 
   @media (max-width: 768px) {
@@ -782,7 +809,7 @@ closeBtn.addEventListener("click", () => {
   <div class="home-text">
     <button class="intro">INTRODUCTION</button>
     <h1>Hello, It's Me <br><span>Abhinav Pandey</span></h1>
-    <h2>And I am a <span class="role-text">Web Developer|Web Designer</span></h2>
+    <h2>And I am a <span class="role-text">Web Developer | Web Designer</span></h2>
     <p class="desc">
       Passionate about crafting <br>
       responsive websites & AI to solve <br>
@@ -791,32 +818,31 @@ closeBtn.addEventListener("click", () => {
 
     <!-- Social Icons -->
     <div class="social">
-      <i class="fab fa-github"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-facebook"></i>
-      <i class="fab fa-linkedin"></i>
-      <i class="fa-brands fa-whatsapp"></i>
+      <a href="https://github.com/Abhinav1901498"><i class="fab fa-github"></i></a>
+      <a href="https://twitter.com/@pandeyabhi3150"><i class="fab fa-twitter"></i></a>
+      <a href="https://facebook.com/YourUsername"><i class="fab fa-facebook"></i></a>
+      <a href="https://linkedin.com/in/abhinav-pandey-b99532b5"><i class="fab fa-linkedin"></i></a>
+      <a href="https://wa.me/9580363258"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <!-- Buttons -->
     <div class="buttons">
-  <!-- First row -->
-  <div class="top-buttons">
-    <button class="btn-outline">Recommendation</button>
-    <button class="btn-fill">Get Started ></button>
+      <button class="btn-outline">Recommendation</button>
+      <button class="btn-fill">Get Started ></button>
+      <br><br>
+      <a href="https://drive.google.com/file/d/1TPaWm-J8yk4VfywTssh6YfeC7LlJWIXt/view?usp=drive_link" download>
+        <button style="padding: 10px 20px; font-size: 18px; background-color: darkcyan; color: darkblue; border: none; border-radius: 5px; cursor: pointer;">
+          Download Resume
+        </button>
+      </a>
+    </div>
   </div>
-  <br>
-     <div class="bottom-button">
-   <a href="https://drive.google.com/file/d/1TPaWm-J8yk4VfywTssh6YfeC7LlJWIXt/view?usp=drive_link" download>
-            <button style="padding: 10px 20px; font-size: 18px; background-color: darkcyan; color: darkblue; border: none; border-radius: 5px; cursor: pointer;">
-                Download Resume
-            </button>
-        </a>
-  </div>
-</div>
+
+  <!-- Right Side Image -->
+  <div class="home-image">
+    <img src="https://edu-versity.in/wp-content/uploads/2022/03/fullstack-development.png" alt="Abhinav Pandey">
   </div>
 </section>
-
 <script>
   const typingSpan = document.querySelector(".typing");
   const text = "Web Developer & Web Designer";
@@ -896,7 +922,7 @@ closeBtn.addEventListener("click", () => {
 }
 
 .about-content p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 2;
    color: black;
   background: rgba(255, 255, 255, 0.05);
