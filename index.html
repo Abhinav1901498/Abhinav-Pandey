@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Abhinav - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Include Font Awesome in <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
+ 
+       @keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+    .hover\:animate-blink:hover {
+  animation: blink 1s infinite;
+            }
+ 
+    </style>
+</head>
+<body class="font-bold text-gray-800 text-xl smooth-scroll">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-10 shadow-sm">
+        <div class="max-w-6xl mx-auto px-2 sm:px-4 lg:px-6">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-gray-800">Abhinav Pandey</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-purple-600 transition-colors">Home</a>
+  <a href="#about" class="text-gray-600 hover:text-purple-600 transition-colors">About</a>
+  <a href="#skills" class="text-gray-600 hover:text-purple-600 transition-colors">Skills</a>
+  <a href="#certificates" class="text-gray-600 hover:text-purple-600 transition-colors">Certificates</a>
+  <a href="#portfolio" class="text-gray-600 hover:text-purple-600 transition-colors">Portfolio</a>
+  <a href="#contact" class="text-gray-600 hover:text-purple-600 transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden pb-2">
+                <a href="#home" class="block py-2 text-gray-600 hover:text-purple-600">Home</a>
+                <a href="#about" class="block py-2 text-gray-600 hover:text-purple-600">About</a>
+                <a href="#skills" class="block py-2 text-gray-600 hover:text-purple-600">Skills</a>
+                <a href="#certificates" class="block py-2 text-gray-600 hover:text-purple-600">Certificates</a>
+                <a href="#portfolio" class="block py-2 text-gray-600 hover:text-purple-600">Portfolio</a>
+                <a href="#contact" class="block py-2 text-gray-600 hover:text-purple-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Initialize AOS right after nav -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,   
+    once: true       
+  });
+</script>
+
+<!-- Home Section -->
+<!-- Home Section -->
+<section id="home" 
+         class="relative min-h-screen flex flex-col md:flex-row items-center justify-center px-8 md:px-20 pt-20 bg-cover bg-center bg-no-repeat text-white overflow-hidden"
+style="background-image: url('https://media.istockphoto.com/id/1388034040/vector/video-content-on-3d-laptop-and-mobile-phone.jpg?s=612x612&w=0&k=20&c=UZCA9a2ykZE6Cl2lnAeJ3ieK4F42MecyMaT7isKkrgg=');">
+
+ <div class="flex-1 flex justify-center items-center mb-8 md:mb-0 md:mr-12" data-aos="fade-right" data-aos-delay="200">
+  <img src="https://i.postimg.cc/RZnPMcMk/IMG-20250226-WA0046.jpg" 
+       alt="Abhinav Pandey" 
+       class="w-70 h-70 md:w-80 md:h-80 object-cover rounded-full shadow-2xl transition-transform duration-300 ease-in-out hover:scale-105">
+</div>
+
+  <!-- Freebies Badge -->
+  <div data-aos="fade-down" class="absolute top-16 right-8 md:right-16 z-50 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 font-bold rounded-full shadow-lg">
+    Abhinav Pandey
+  </div>
+
+  <!-- Left Side: Text Content -->
+  <div class="home-text flex-1 max-w-lg text-left md:text-left space-y-6 md:ml-35">
+    
+    <!-- Introduction Button -->
+    <button class="intro bg-white/20 backdrop-blur-md text-sm tracking-wider px-10 py-2 rounded-full border border-white/30 hover:bg-white/30 transition-all duration-300" data-aos="fade-right" data-aos-delay="100">
+      INTRODUCTION
+    </button>
+
+    <!-- Main Heading -->
+    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight" data-aos="fade-right" data-aos-delay="200">
+      Hello, It's Me <br>
+      <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-pink-400 animate-pulse">Abhinav Pandey</span>
+    </h1>
+
+    <!-- Role Text -->
+    <h2 class="text-2xl md:text-3xl font-semibold" data-aos="fade-right" data-aos-delay="300">
+      And I am a 
+      <span class="text-yellow-300 font-bold animate-pulse">Full Stack Web Developer 
+        | Web Designer</span>
+    </h2>
+
+    <!-- Description -->
+    <p class="desc text-gray-50 text-2xl leading-relaxed" data-aos="fade-right" data-aos-delay="400">
+      I craft intuitive and visually stunning digital experiences that bridge the gap between design and technology. 
+      Every project I work on is driven by creativity, user-centric thinking, and clean, efficient code. 
+       </p> 
+    <!-- Social Icons -->
+    <div class="social flex justify-center md:justify-start gap-6 mt-6 text-3xl" data-aos="fade-up" data-aos-delay="500">
+      <a href="https://github.com/Abhinav1901498" class="hover:text-gray-400 hover:animate-blink transition transition"><i class="fab fa-github"></i></a>
+      <a href="https://twitter.com/@pandeyabhi3150" class="text-blue-400 hover:text-blue-200 hover:animate-blink transition transition"><i class="fab fa-twitter"></i></a>
+      <a href="https://facebook.com/YourUsername" class="text-blue-600 hover:text-blue-400 hover:animate-blink transition transition"><i class="fab fa-facebook"></i></a>
+      <a href="https://linkedin.com/in/abhinav-pandey-b499532b5" class="text-blue-500 hover:text-blue-300 hover:animate-blink transition transition"><i class="fab fa-linkedin"></i></a>
+      <a href="https://wa.me/9580363258" class="text-green-400 hover:text-green-300 hover:animate-blink transition transition"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Call to Action Buttons -->
+    <div class="flex justify-center md:justify-start gap-6 mt-6" data-aos="fade-up" data-aos-delay="600">
+      <a href="#portfolio" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">View My Work</a>
+      <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-colors">Get In Touch</a>
+    </div>
+  </div>
+<!-- Right Side: Hero Image -->
+  <div class="flex-1 hidden md:flex justify-center items-center z-20" data-aos="fade-left" data-aos-delay="700">
+    <img src="" 
+         alt="">
+  </div>
+<!-- Decorative Background Shapes -->
+  <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-500 opacity-30 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute -top-32 -left-32 w-80 h-80 bg-pink-500 opacity-20 rounded-full blur-2xl animate-pulse"></div>
+
+</section>
+
+<!-- About Section -->
+<section id="about" class="relative py-20 bg-cover bg-center bg-no-repeat" 
+         style="background-image: url('https://media.istockphoto.com/id/1388034040/vector/video-content-on-3d-laptop-and-mobile-phone.jpg?s=612x612&w=0&k=20&c=UZCA9a2ykZE6Cl2lnAeJ3ieK4F42MecyMaT7isKkrgg=');">
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-white mb-4">About Me</h2>
+            <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+                I am passionate about creating digital solutions that combine beautiful design with powerful functionality.
+            </p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+            <!-- Profile Image -->
+            <div class="flex-1 flex justify-center items-center mb-8 md:mb-0 md:mr-12" data-aos="fade-right" data-aos-delay="200">
+  <img src="https://i.postimg.cc/RZnPMcMk/IMG-20250226-WA0046.jpg" 
+       alt="Abhinav Pandey" 
+       class="w-70 h-70 md:w-80 md:h-80 object-cover rounded-full shadow-2xl transition-transform duration-300 ease-in-out hover:scale-105">
+</div>
+
+              
+            <div class="flex-1 text-center md:text-left space-y-6">
+                <!-- Intro Text -->
+                <h3 class="text-2xl font-bold text-white">Hi, I'm Abhinav!</h3>
+                <p class="text-gray-200 leading-relaxed">
+                    I am currently pursuing a B.Tech in Computer Science at SRMU, driven by a passion for leveraging data to foster innovation and informed decision-making. 
+                    My academic journey has provided me with a robust theoretical foundation and practical experience in computer science and engineering. 
+                    I thrive on challenges and enjoy tackling complex problems with creativity and analytical thinking.
+                </p>
+
+                 
+                <div class="grid grid-cols-2 gap-4 mt-6">
+                    <div class="bg-white/80 p-4 rounded-lg shadow-lg backdrop-blur-sm text-center">
+                        <div class="text-2xl mb-2">💻</div>
+                        <h4 class="font-semibold text-gray-800">Frontend</h4>
+                        <p class="text-sm text-gray-700">React, Vue, JavaScript</p>
+                    </div>
+                    <div class="bg-white/80 p-4 rounded-lg shadow-lg backdrop-blur-sm text-center">
+                        <div class="text-2xl mb-2">⚙️</div>
+                        <h4 class="font-semibold text-gray-800">Backend</h4>
+                        <p class="text-sm text-gray-700">Node.js, Python, APIs</p>
+                    </div>
+                    <div class="bg-white/80 p-4 rounded-lg shadow-lg backdrop-blur-sm text-center">
+                        <div class="text-2xl mb-2">🎨</div>
+                        <h4 class="font-semibold text-gray-800">Design</h4>
+                        <p class="text-sm text-gray-700">Figma, Adobe XD, UI/UX</p>
+                    </div>
+                    <div class="bg-white/80 p-4 rounded-lg shadow-lg backdrop-blur-sm text-center">
+                        <div class="text-2xl mb-2">☁️</div>
+                        <h4 class="font-semibold text-gray-800">Cloud</h4>
+                        <p class="text-sm text-gray-700">AWS, Docker, DevOps</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+ <!-- Skills Section -->
+<section id="skills" class="relative py-20 bg-cover bg-center bg-no-repeat" 
+         style="background-image: url('https://media.istockphoto.com/id/1388034040/vector/video-content-on-3d-laptop-and-mobile-phone.jpg?s=612x612&w=0&k=20&c=UZCA9a2ykZE6Cl2lnAeJ3ieK4F42MecyMaT7isKkrgg=');">
+  <div class="max-w-6xl mx-auto text-center px-6">
+    <h2 class="text-4xl font-bold text-gray-50 mb-12 fade-in">💡 My Skills</h2>
+    <p class="text-2xl md:text-2xl text-gray-50 text-center mb-12">
+  I possess a diverse set of technical skills in web development, design, and programming that help me build creative and efficient solutions.
+</p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center">
+
+      <!-- HTML5 -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-orange-400 to-orange-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fab fa-html5 text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">HTML5</span>
+      </div>
+
+      <!-- CSS3 -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-blue-400 to-blue-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fab fa-css3-alt text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">CSS3</span>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-yellow-400 to-yellow-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fab fa-js text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">JavaScript</span>
+      </div>
+
+      <!-- Tailwind CSS -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-sky-400 to-blue-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fas fa-wind text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">Tailwind CSS</span>
+      </div>
+
+      <!-- React -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-cyan-400 to-blue-500 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fab fa-react text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">React</span>
+      </div>
+
+      <!-- Next.js -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-gray-700 to-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fas fa-layer-group text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">Next.js</span>
+      </div>
+
+      <!-- Node.js -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-green-400 to-green-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fab fa-node-js text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">Node.js</span>
+      </div>
+
+      <!-- Python -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-yellow-400 to-yellow-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fab fa-python text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">Python</span>
+      </div>
+      <!-- Python -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-yellow-400 to-yellow-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fab fa-python text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">NLP</span>
+      </div>
+      <!-- Python -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-yellow-400 to-yellow-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fab fa-python text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">DL</span>
+      </div>
+      <!-- Python -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-yellow-400 to-yellow-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fab fa-python text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">AI</span>
+      </div>
+      <!-- Python -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-yellow-400 to-yellow-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fab fa-python text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">CV</span>
+      </div>
+      <!-- Python -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-yellow-400 to-yellow-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fab fa-python text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">ML</span>
+      </div>
+
+      <!-- Git & GitHub -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-red-400 to-red-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fab fa-git-alt text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">Git & GitHub</span>
+      </div>
+
+      <!-- MongoDB -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-green-600 to-green-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fas fa-database text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">MongoDB</span>
+      </div>
+
+      <!-- Express.js -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-gray-500 to-gray-700 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fas fa-server text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">Express.js</span>
+      </div>
+
+      <!-- C Language -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-blue-600 to-blue-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fas fa-code text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">C Lang.</span>
+      </div>
+
+      <!-- MySQL -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-cyan-500 to-cyan-700 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fas fa-database text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">MySQL</span>
+      </div>
+
+      <!-- DBMS -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-indigo-500 to-indigo-700 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fas fa-database text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">DBMS</span>
+      </div>
+
+      <!-- SDLC -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-purple-500 to-purple-700 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fas fa-project-diagram text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">SDLC</span>
+      </div>
+
+      <!-- Data Science -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-teal-400 to-teal-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fas fa-chart-line text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">Data Science</span>
+      </div>
+
+      <!-- DSA -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-lime-400 to-lime-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fas fa-cogs text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">DSA</span>
+      </div>
+
+      <!-- Compiler Design -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-emerald-500 to-emerald-700 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fas fa-code-branch text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">Compiler</span>
+      </div>
+
+      <!-- Operating System -->
+      <div class="flex flex-col items-center bg-gradient-to-r from-emerald-600 to-emerald-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+        <i class="fas fa-desktop text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white">Operating System</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Certificates Section -->
+<section id="certificates" class="relative py-20 bg-cover bg-center bg-no-repeat" 
+    style="background-image: url('https://media.istockphoto.com/id/1388034040/vector/video-content-on-3d-laptop-and-mobile-phone.jpg?s=612x612&w=0&k=20&c=UZCA9a2ykZE6Cl2lnAeJ3ieK4F42MecyMaT7isKkrgg=');">
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-white mb-4">📜 Certifications & Achievements</h2>
+      <p class="text-center text-gray-50 text-2xl"> I have earned several certifications and achievements that showcase my skills and dedication in web development and design.</p>
+    </div>
+
+    <!-- Certificates Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Web Development -->
+      <div class="bg-white/90 rounded-xl shadow-lg p-6 text-center hover:scale-105 transform transition duration-300">
+        <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center text-3xl text-blue-600 mb-4">
+          💻
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Web Development Internship</h3>
+        <a href="https://drive.google.com/file/d/1Juh_3SC8eAP2HkQtLnEY2NEYhVVsrVQ8/view?usp=drive_link" 
+           target="_blank" 
+           class="inline-block bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- AI Agent For Beginners -->
+      <div class="bg-white/90 rounded-xl shadow-lg p-6 text-center hover:scale-105 transform transition duration-300">
+        <div class="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center text-3xl text-green-600 mb-4">
+          🤖
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-4">AI Agent For Beginners</h3>
+        <a href="https://drive.google.com/file/d/1A6a88VgQMGmjSQ7NK9L4vdm4UnWWBgag/view?usp=drive_link" 
+           target="_blank" 
+           class="inline-block bg-green-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-green-700 transition">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- Technology Job Simulation -->
+      <div class="bg-white/90 rounded-xl shadow-lg p-6 text-center hover:scale-105 transform transition duration-300">
+        <div class="w-16 h-16 mx-auto bg-purple-100 rounded-full flex items-center justify-center text-3xl text-purple-600 mb-4">
+          🚀
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Technology Job Simulation</h3>
+        <a href="https://drive.google.com/file/d/1OYhgPQTyQ9vM4-A6sK02sHywAmOEpAbl/view?usp=drive_link" 
+           target="_blank" 
+           class="inline-block bg-purple-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-purple-700 transition">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- HackerRank SQL -->
+      <div class="bg-white/90 rounded-xl shadow-lg p-6 text-center hover:scale-105 transform transition duration-300">
+        <div class="w-16 h-16 mx-auto bg-yellow-100 rounded-full flex items-center justify-center text-3xl text-yellow-600 mb-4">
+          🗃️
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-4">HackerRank SQL (Basic)</h3>
+        <a href="https://drive.google.com/file/d/16GM48QMwm4eo3Bt-5WL9VnnOo7fqO6P6/view?usp=drive_link" 
+           target="_blank" 
+           class="inline-block bg-yellow-500 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-yellow-600 transition">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- Bhartiya Antariksh Hackathon -->
+      <div class="bg-white/90 rounded-xl shadow-lg p-6 text-center hover:scale-105 transform transition duration-300">
+        <div class="w-16 h-16 mx-auto bg-red-100 rounded-full flex items-center justify-center text-3xl text-red-600 mb-4">
+          🛰️
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Bhartiya Antariksh Hackathon</h3>
+        <a href="https://drive.google.com/file/d/1aecj7It6nsHr1z17-VI9mUV7K-oKHl16/view?usp=drive_link" 
+           target="_blank" 
+           class="inline-block bg-red-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- AI & Web Integration -->
+      <div class="bg-white/90 rounded-xl shadow-lg p-6 text-center hover:scale-105 transform transition duration-300">
+        <div class="w-16 h-16 mx-auto bg-indigo-100 rounded-full flex items-center justify-center text-3xl text-indigo-600 mb-4">
+          🧠
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Quantium Certificate</h3>
+        <a href="https://drive.google.com/file/d/1yezISUoSC4JReuTFes5Ku9r7GS-LK24l/view?usp=drive_link" 
+           class="inline-block bg-indigo-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-indigo-700 transition">
+          View Certificate
+        </a>
+      </div>
+      <!-- Accenture Certificate -->
+      <div class="bg-white/90 rounded-xl shadow-lg p-6 text-center hover:scale-105 transform transition duration-300">
+        <div class="w-16 h-16 mx-auto bg-indigo-100 rounded-full flex items-center justify-center text-3xl text-indigo-600 mb-4">
+          🧠
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Accenture Certificate</h3>
+        <a href="https://drive.google.com/file/d/16KeYFw1AVULVgV-vYz8dDT1aIeK5nhZq/view?usp=drive_link" 
+           class="inline-block bg-indigo-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-indigo-700 transition">
+          View Certificate
+        </a>
+      </div>
+      <!-- Deloittle certificate-->
+      <div class="bg-white/90 rounded-xl shadow-lg p-6 text-center hover:scale-105 transform transition duration-300">
+        <div class="w-16 h-16 mx-auto bg-indigo-100 rounded-full flex items-center justify-center text-3xl text-indigo-600 mb-4">
+          🧠
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Deloittle certificate</h3>
+        <a href="https://drive.google.com/file/d/1yezISUoSC4JReuTFes5Ku9r7GS-LK24l/view?usp=drive_link" 
+           class="inline-block bg-indigo-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-indigo-700 transition">
+          View Certificate
+        </a>
+      </div>
+      <!-- Google My Business _ Google -->
+      <div class="bg-white/90 rounded-xl shadow-lg p-6 text-center hover:scale-105 transform transition duration-300">
+        <div class="w-16 h-16 mx-auto bg-indigo-100 rounded-full flex items-center justify-center text-3xl text-indigo-600 mb-4">
+          🧠
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Google My Business _ Google</h3>
+        <a href="https://drive.google.com/file/d/1SZQogu_BI5Q-uylTvIf1yBx8vhRWqrho/view?usp=drive_link" 
+           class="inline-block bg-indigo-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-indigo-700 transition">
+          View Certificate
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Portfolio & Projects Section -->
+<section id="portfolio" class="relative py-16 bg-cover bg-center bg-no-repeat"
+  style="background-image: url('https://media.istockphoto.com/id/1388034040/vector/video-content-on-3d-laptop-and-mobile-phone.jpg?s=612x612&w=0&k=20&c=UZCA9a2ykZE6Cl2lnAeJ3ieK4F42MecyMaT7isKkrgg=');">
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-50 mb-3 fade-in">🚀 My Portfolio & Projects</h2>
+      <p class="text-2xl text-gray-50 max-w-2xl mx-auto fade-in">
+        A showcase of my most creative and impactful projects that combine design, technology, and innovation.
+      </p>
+    </div>
+
+    <!-- Project Cards Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Spam Email Detection -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-transform transform hover:scale-105">
+        <div class="h-40 bg-gradient-to-br from-pink-400 to-red-500 flex items-center justify-center text-5xl text-white">
+          📧
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2 text-gray-800">Spam Email Detection</h3>
+          <p class="text-gray-600 text-sm mb-3">
+            A machine learning-based model that classifies emails as spam or legitimate using NLP, Flask, and Jupyter Notebook.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full">Python</span>
+            <span class="px-2 py-0.5 bg-green-100 text-green-800 text-xs rounded-full">Flask</span>
+            <span class="px-2 py-0.5 bg-purple-100 text-purple-800 text-xs rounded-full">Jupyter</span>
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full">HTML</span>
+            <span class="px-2 py-0.5 bg-green-100 text-green-800 text-xs rounded-full">Tailwind</span>
+          </div>
+          <a href="https://github.com/Abhinav1901498/Spam-Email-Detection"
+            class="text-purple-600 text-sm font-semibold hover:text-purple-800 transition-colors">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Chatbot Using Python -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-transform transform hover:scale-105">
+        <div class="h-40 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-5xl text-white">
+          🤖
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2 text-gray-800">Chatbot Using Python</h3>
+          <p class="text-gray-600 text-sm mb-3">
+            AI chatbot using Cohere API and Flask that delivers intelligent and interactive user experiences.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full">Python</span>
+            <span class="px-2 py-0.5 bg-yellow-100 text-yellow-800 text-xs rounded-full">Cohere API</span>
+            <span class="px-2 py-0.5 bg-red-100 text-red-800 text-xs rounded-full">HTML</span>
+            <span class="px-2 py-0.5 bg-red-100 text-red-800 text-xs rounded-full">Tailwind</span>
+            <span class="px-2 py-0.5 bg-green-100 text-green-800 text-xs rounded-full">Flask</span>
+          </div>
+          <a href="https://github.com/Abhinav1901498/Chatbot"
+            class="text-purple-600 text-sm font-semibold hover:text-purple-800 transition-colors">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Brightness Control System -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-transform transform hover:scale-105">
+        <div class="h-40 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center text-5xl text-white">
+          💡
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2 text-gray-800">Brightness Control using OpenCV</h3>
+          <p class="text-gray-600 text-sm mb-3">
+            Hand gesture-based system that adjusts screen brightness using OpenCV and Mediapipe.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full">Python</span>
+            <span class="px-2 py-0.5 bg-orange-100 text-orange-800 text-xs rounded-full">Computer Vision</span>
+            <span class="px-2 py-0.5 bg-gray-100 text-gray-800 text-xs rounded-full">Mediapipe</span>
+          </div>
+          <a href="https://github.com/Abhinav1901498/Brightness-Control-using-openCV/tree/main"
+            class="text-purple-600 text-sm font-semibold hover:text-purple-800 transition-colors">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Mouse Tab Controller -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-transform transform hover:scale-105">
+        <div class="h-40 bg-gradient-to-br from-indigo-400 to-cyan-500 flex items-center justify-center text-5xl text-white">
+          🖱
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2 text-gray-800">Mouse Tab Controller using OpenCV</h3>
+          <p class="text-gray-600 text-sm mb-3">
+            A vision-based controller that lets users operate mouse and tabs through gestures.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full">Python</span>
+            <span class="px-2 py-0.5 bg-orange-100 text-orange-800 text-xs rounded-full">OpenCV</span>
+            <span class="px-2 py-0.5 bg-gray-100 text-gray-800 text-xs rounded-full">Mediapipe</span>
+            <span class="px-2 py-0.5 bg-gray-100 text-gray-800 text-xs rounded-full">PyAutoGUI</span>
+          </div>
+          <a href="https://github.com/Abhinav1901498/Mouse-Tab-Controller-using-open-CV"
+            class="text-purple-600 text-sm font-semibold hover:text-purple-800 transition-colors">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Virtual Calculator -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-transform transform hover:scale-105">
+        <div class="h-40 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-5xl text-white">
+          🧮
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2 text-gray-800">Virtual Calculator using OpenCV</h3>
+          <p class="text-gray-600 text-sm mb-3">
+            A gesture-driven calculator app built using OpenCV and Mediapipe.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full">Python</span>
+            <span class="px-2 py-0.5 bg-orange-100 text-orange-800 text-xs rounded-full">OpenCV</span>
+            <span class="px-2 py-0.5 bg-gray-100 text-gray-800 text-xs rounded-full">Mediapipe</span>
+            <span class="px-2 py-0.5 bg-gray-100 text-gray-800 text-xs rounded-full">Gesture Control</span>
+          </div>
+          <a href="https://github.com/Abhinav1901498/virtual-Calculator"
+            class="text-purple-600 text-sm font-semibold hover:text-purple-800 transition-colors">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Weather Prediction Model -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-transform transform hover:scale-105">
+        <div class="h-40 bg-gradient-to-br from-teal-400 to-sky-500 flex items-center justify-center text-5xl text-white">
+          🌦
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2 text-gray-800">Weather Prediction Model</h3>
+          <p class="text-gray-600 text-sm mb-3">
+            Predicts weather patterns using real-time API data integrated with Flask and Tkinter.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full">Python</span>
+            <span class="px-2 py-0.5 bg-orange-100 text-orange-800 text-xs rounded-full">Weather API</span>
+            <span class="px-2 py-0.5 bg-gray-100 text-gray-800 text-xs rounded-full">Flask</span>
+            <span class="px-2 py-0.5 bg-gray-100 text-gray-800 text-xs rounded-full">Tkinter</span>
+          </div>
+          <a href="https://github.com/Abhinav1901498/Weather-Prediction-model/tree/main"
+            class="text-purple-600 text-sm font-semibold hover:text-purple-800 transition-colors">View Project →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Contact Section -->
+<section id="contact" class="relative py-16 bg-cover bg-center bg-no-repeat"
+  style="background-image: url('https://media.istockphoto.com/id/1388034040/vector/video-content-on-3d-laptop-and-mobile-phone.jpg?s=612x612&w=0&k=20&c=UZCA9a2ykZE6Cl2lnAeJ3ieK4F42MecyMaT7isKkrgg=');">
+  <div class="text-center mb-12">
+    <h1 class="text-5xl font-bold text-gray-50">Contact</h1>
+    <p class="text-gray-50 text-2xl mt-3">Let’s connect and create something amazing together 🚀</p>
+  </div>
+
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 px-6">
+
+    <!-- Contact Info Card -->
+    <div class="bg-gray-900 text-white rounded-2xl shadow-2xl p-8 w-full md:w-1/3 flex flex-col justify-between">
+      <div>
+        <h2 class="text-3xl font-bold mb-6 text-center text-purple-400">Get in Touch</h2>
+
+        <!-- Contact Buttons -->
+        <div class="flex flex-col space-y-4">
+          <a href="https://github.com/Abhinav1901498" target=""
+             class="flex items-center justify-center bg-gray-800 hover:bg-gray-700 rounded-lg py-3 transition transform hover:scale-105 shadow">
+            <i class="fab fa-github mr-3 text-xl"></i> GitHub
+          </a>
+
+          <a href="https://linkedin.com/in/abhinav-pandey-b499532b5" target=""
+             class="flex items-center justify-center bg-blue-700 hover:bg-blue-600 rounded-lg py-3 transition transform hover:scale-105 shadow">
+            <i class="fab fa-linkedin mr-3 text-xl"></i> LinkedIn
+          </a>
+
+          <a href="https://wa.me/9580363258" target=""
+             class="flex items-center justify-center bg-green-600 hover:bg-green-500 rounded-lg py-3 transition transform hover:scale-105 shadow">
+            <i class="fab fa-whatsapp mr-3 text-xl"></i> WhatsApp
+          </a>
+
+          <a href="https://twitter.com" target=""
+             class="flex items-center justify-center bg-blue-500 hover:bg-blue-400 rounded-lg py-3 transition transform hover:scale-105 shadow">
+            <i class="fab fa-twitter mr-3 text-xl"></i> Twitter
+          </a>
+
+          <a href="mailto:pandeyabhi3150@gmail.com"
+             class="flex items-center justify-center bg-red-600 hover:bg-red-500 rounded-lg py-3 transition transform hover:scale-105 shadow">
+            <i class="fas fa-envelope mr-3 text-xl"></i> Email
+          </a>
+        </div>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="flex justify-center space-x-6 mt-8">
+        <a href="https://linkedin.com/in/abhinav-pandey-b499532b5" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="w-7 h-7 hover:scale-110 transition" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/Abhinav1901498" target="">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" class="w-7 h-7 hover:scale-110 transition" alt="GitHub">
+        </a>
+        <a href="https://wa.me/9580363258" target="">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="w-7 h-7 hover:scale-110 transition" alt="WhatsApp">
+        </a>
+        <a href="https://twitter.com" target="">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="w-7 h-7 hover:scale-110 transition" alt="Twitter">
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact Form Card -->
+    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full md:w-2/3">
+      <h2 class="text-3xl font-bold text-gray-800 text-center mb-3">Send a Message</h2>
+      <p class="text-gray-500 text-center mb-8">Feel free to reach out for collaborations or just a friendly hello 👋</p>
+
+      <form class="space-y-5">
+        <input type="text" placeholder="Your Name"
+               class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400">
+        <input type="email" placeholder="Your Email"
+               class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400">
+        <textarea placeholder="Your Message"
+               class="w-full p-3 rounded-md border border-gray-300 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-purple-400"></textarea>
+        <button type="submit"
+                class="w-full bg-purple-600 text-white font-semibold py-3 rounded-full hover:bg-purple-700 transition transform hover:scale-105">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Download Section -->
+<section id="portfolio" class="relative py-16 bg-cover bg-center bg-no-repeat"
+  style="background-image: url('https://media.istockphoto.com/id/1388034040/vector/video-content-on-3d-laptop-and-mobile-phone.jpg?s=612x612&w=0&k=20&c=UZCA9a2ykZE6Cl2lnAeJ3ieK4F42MecyMaT7isKkrgg=');">
+  <div class="text-center mb-12">
+    <h1 class="text-5xl font-bold text-gray-50">Downloads</h1>
+    <p class="text-gray-100 text-2xl mt-3">Access my resume and research paper for more details 📄</p>
+  </div>
+
+  <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-center gap-8 px-6">
+    <!-- Download Resume -->
+    <a href="https://drive.google.com/file/d/14yqC8loxunI7NUUc8-solLwH3udEgUbR/view?usp=drive_link" 
+    download
+       class="flex items-center justify-center bg-purple-600 text-white font-semibold px-8 py-5 rounded-2xl hover:bg-purple-700 transition transform hover:scale-105 shadow-lg">
+      <i class="fas fa-download mr-3 text-xl"></i> Download Resume
+    </a>
+
+    <!-- Download Research Paper -->
+    <a href="https://drive.google.com/file/d/1V0JLtwqYzjGnHUFuk4ZhNiQ_YpwohtU7/view?usp=drive_link" 
+    download
+       class="flex items-center justify-center bg-green-600 text-white font-semibold px-8 py-5 rounded-2xl hover:bg-green-700 transition transform hover:scale-105 shadow-lg">
+      <i class="fas fa-file-alt mr-3 text-xl"></i> Download Research Paper
+    </a>
+  </div>
+</section>
+
+    <!-- Footer -->
+<footer class="relative py-16 bg-cover bg-center bg-no-repeat" 
+        style="background-image: url('https://media.istockphoto.com/id/1388034040/vector/video-content-on-3d-laptop-and-mobile-phone.jpg?s=612x612&w=0&k=20&c=UZCA9a2ykZE6Cl2lnAeJ3ieK4F42MecyMaT7isKkrgg=');">
+  
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center md:items-start justify-between gap-12">
+    
+    <!-- Left Side Image -->
+    <div class="flex-1 flex justify-center items-center mb-8 md:mb-0 md:mr-12" data-aos="fade-right" data-aos-delay="200">
+  <img src="https://i.postimg.cc/RZnPMcMk/IMG-20250226-WA0046.jpg" 
+       alt="Abhinav Pandey" 
+       class="w-70 h-70 md:w-80 md:h-80 object-cover rounded-full shadow-2xl transition-transform duration-300 ease-in-out hover:scale-105">
+</div>
+
+
+    <!-- Right Side Text -->
+    <div class="flex-1 text-center md:text-left space-y-6">
+      <h1 class="text-4xl lg:text-5xl font-bold text-white">
+        Hello, I’m <span class="text-purple-500">Abhinav Pandey</span>
+      </h1>
+      <p class="text-gray-50 leading-relaxed text-2xl">
+        I craft intuitive and visually stunning digital experiences that bridge the gap between design and technology.
+        Every project I work on is driven by creativity, user-centric thinking, and clean, efficient code.
+      </p>
+      <a href="#contact" class="inline-block bg-purple-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-purple-700 transition">
+        Say Hello!
+      </a>
+    <!-- Copyright -->
+      <div class="flex justify-start">
+  <div class="mt-25 text-gray-50 text-2xl text-right">
+    &copy; Abhinav Pandey 2025
+  </div>
+</div>
+    </div>
+
+  </div>
+</footer>
+
+
+    <script>
+    // ✅ Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // ✅ Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    });
+
+    // ✅ Fade-in animation on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+    });
+
+    // ✅ Contact form handling
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const message = formData.get('message');
+        
+        // Simulate form submission
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon!`);
+            this.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }, 1500);
+    });
+
+    // ✅ Initialize fade-in animations for elements already in view
+    setTimeout(() => {
+        document.querySelectorAll('.fade-in').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.classList.add('visible');
+            }
+        });
+    }, 100);
+</script>
+</body>
+</html>
