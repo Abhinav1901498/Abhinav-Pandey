@@ -10,25 +10,19 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            poppins: ['Poppins', 'sans-serif'],
-          },
+          fontFamily: { poppins: ['Poppins', 'sans-serif'] },
           keyframes: {
             pulse: {
               '0%, 100%': { transform: 'scale(1)' },
-              '50%': { transform: 'scale(1.12)' }
-            },
-            typing: {
-              'from': { width: '0' },
-              'to': { width: '100%' }
+              '50%': { transform: 'scale(1.15)' }
             },
             blink: {
-              '50%': { 'border-color': 'transparent' }
+              '0%, 100%': { opacity: 1 },
+              '50%': { opacity: 0 }
             }
           },
           animation: {
             pulse: 'pulse 2s infinite',
-            typing: 'typing 4s steps(30) forwards',
             blink: 'blink 0.8s infinite'
           }
         }
@@ -36,52 +30,55 @@
     }
   </script>
 </head>
-<body class="h-full bg-gradient-to-br from-white to-amber-50 overflow-hidden font-poppins">
+<body class="h-screen bg-gradient-to-br from-white to-amber-50 overflow-hidden font-poppins">
 
-  <!-- LOADING SCREEN -->
-  <div id="loader" class="fixed inset-0 flex flex-col items-center justify-center space-y-10 z-50">
+  <!-- MOBILE + DESKTOP PERFECT LOADING SCREEN -->
+  <div id="loader" class="fixed inset-0 flex flex-col items-center justify-center px-6 space-y-8 z-50">
 
-    <!-- AP Logo -->
-    <div class="w-32 h-32 md:w-36 md:h-36 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center shadow-2xl animate-pulse">
-      <span class="text-white text-5xl md:text-6xl font-black">AP</span>
+    <!-- AP Logo - Mobile pe bada, Desktop pe aur bada -->
+    <div class="w-28 h-28 sm:w-32 md:w-36 lg:w-40 bg-gradient-to-br from-red-600 to-red-500 
+                    rounded-full flex items-center justify-center shadow-2xl animate-pulse">
+      <span class="text-white text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter">AP</span>
     </div>
 
-    <!-- Name -->
-    <h1 class="text-5xl md:text-7xl font-black text-red-600 tracking-tighter drop-shadow-lg">
+    <!-- Name - Mobile pe readable, Desktop pe massive -->
+    <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-red-600 
+                tracking-tighter text-center leading-tight drop-shadow-2xl">
       Abhinav Pandey
     </h1>
 
-    <!-- Underline -->
-    <div class="w-96 h-2 bg-gradient-to-r from-red-600 to-orange-500 rounded-full"></div>
+    <!-- Gradient Underline - Responsive width -->
+    <div class="w-72 sm:w-80 md:w-96 h-2 md:h-3 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 
+                rounded-full shadow-lg"></div>
 
-    <!-- Typewriter Effect (Pure Tailwind + JS) -->
-    <div class="w-full max-w-2xl mx-auto overflow-hidden">
-      <p class="inline-block text-3xl md:text-5xl font-bold text-purple-600 
-                    whitespace-nowrap border-r-4 border-pink-500
-                    animate-typing overflow-hidden">
-        THE NICOW Web Developer
-      </p>
+    <!-- Title with Blinking Cursor -->
+    <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-purple-700 
+                flex items-center gap-1 whitespace-nowrap">
+      <span>THE NICOW Web Developer</span>
+      <span class="w-1 h-10 md:h-12 bg-pink-600 animate-blink"></span>
     </div>
 
-    <!-- Progress Bar -->
-    <div class="w-80 md:w-96 h-4 bg-gray-300 rounded-full overflow-hidden shadow-inner mt-12">
+    <!-- Progress Bar - Full width on mobile -->
+    <div class="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl h-4 md:h-5 bg-gray-200 
+                rounded-full overflow-hidden shadow-inner mt-12">
       <div id="progress" 
-           class="h-full w-0 bg-gradient-to-r from-red-600 to-amber-500 rounded-full shadow-lg 
-                  transition-all duration-300 ease-out 
-                  shadow-red-500/50"></div>
+           class="h-full w-0 bg-gradient-to-r from-red-600 to-amber-500 rounded-full 
+                  shadow-lg shadow-red-600/60 transition-all duration-500 ease-out"></div>
     </div>
 
-    <!-- Percentage Text -->
-    <p class="text-2xl font-bold text-gray-700">
+    <!-- Loading Percentage -->
+    <p class="text-2xl sm:text-3xl font-bold text-gray-700">
       Loading... <span id="percent" class="text-red-600 font-black">0</span>%
     </p>
 
     <!-- Footer Name -->
-    <p class="text-xl font-bold text-gray-600 mt-8 opacity-90">Abhinav Pandey</p>
+    <p class="text-lg sm:text-xl md:text-2xl font-bold text-gray-600 mt-8 opacity-80">
+      Abhinav Pandey
+    </p>
 
   </div>
 
-  <!-- JavaScript -->
+  <!-- JavaScript - Smooth Progress + Redirect -->
   <script>
     const progress = document.getElementById('progress');
     const percentText = document.getElementById('percent');
@@ -92,13 +89,13 @@
         clearInterval(interval);
         setTimeout(() => {
           window.location.href = "abhi.html";
-        }, 1000);
+        }, 1200);
       } else {
         width += 1;
         progress.style.width = width + '%';
         percentText.textContent = width;
       }
-    }, 150);
+    }, 150); // ~5 seconds total
   </script>
 </body>
 </html>
