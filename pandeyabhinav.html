@@ -246,9 +246,9 @@
       <div class="flex-1 flex justify-center relative" data-aos="fade-right">
         <div class="absolute w-72 h-72 md:w-96 md:h-96 bg-gradient-to-r from-orange-400 to-pink-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
         <img
-          src="https://raw.githubusercontent.com/Abhinav1901498/Abhinav-Pandey/main/abhinav_rgb-removebg-preview.jpeg"
+          src="https://raw.githubusercontent.com/Abhinav1901498/Abhinav-Pandey/main/pandey_abhinav-removebg-preview (1).png"
           alt="Abhinav Pandey"
-          class="relative z-10 w-72 h-72 md:w-96 md:h-96 object-cover rounded-Tringle shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500"
+          class="relative z-10 w-72 h-72 md:w-96 md:h-96 object-cover rounded-Tringle shadow-2xl hover:scale-105 transition-transform duration-500"
         />
       </div>
 
@@ -859,10 +859,125 @@
         form.reset();
       } else {
         alert("❌ There was a problem sending your message. Please try again.");
-      }
+      } 
     });
   </script>
 </section>
+ 
+  <!-- phone section  -->
+<section class="py-12 px-6" style= "background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc30F9oWwu9oEclWL56ypI4Rl6MwGXeJP7zw&s');">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+      
+      <!-- Profile Image -->
+      <div class="flex-shrink-0">
+        <img 
+          src="https://raw.githubusercontent.com/Abhinav1901498/Abhinav-Pandey/main/pandey_abhinav-removebg-preview%20(1).png" 
+          alt="Abhinav Pandey profile" 
+          class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-lg border-4 border-white"
+        >
+      </div>
+      
+      <!-- Text Content -->
+      <div class="text-white text-center md:text-left">
+        <p class="uppercase tracking-wider text-sm md:text-base opacity-90 mb-2">
+          Test an phone Call & Message
+        </p>
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">
+          Abhinav Pandey
+        </h1>
+        <p class="text-lg md:text-xl mb-8 opacity-90">
+          I can answer any question about Vida.
+        </p>
+        
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <!-- Call Button -->
+          <button 
+            onclick="window.location.href='tel:+1234567890'" 
+            class="bg-white text-slate-800 px-8 py-4 rounded-full font-medium shadow hover:shadow-lg transition flex items-center justify-center gap-3"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.072l-1.886.92a9.5 9.5 0 008.496 8.496l.92-1.886a1 1 0 011.072-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-4C5.373 18 2 14.627 2 10V3z"/>
+            </svg>
+            Call Abhinav
+          </button>
+          
+          <!-- Text Button - Opens WhatsApp with pre-filled message -->
+          <button 
+            onclick="openWhatsApp()" 
+            class="bg-white text-slate-800 px-8 py-4 rounded-full font-medium shadow hover:shadow-lg transition flex items-center justify-center gap-3"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            Text Abhinav
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Modal (for typing message) -->
+  <div id="whatsappModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+      <h2 class="text-2xl font-bold mb-4">Text Abhinav</h2>
+      <p class="text-gray-600 mb-4">Type your message below. On Send, your message will be ready to send to Abhinav</p>
+      <textarea 
+        id="Message" 
+        placeholder="Type your message here..." 
+        class="w-full h-32 p-4 border border-gray-300 rounded-lg mb-4 resize-none"
+      ></textarea>
+      <div class="flex gap-4">
+        <button 
+          onclick="sendToWhatsApp()" 
+          class="bg-green-600 text-white px-6 py-3 rounded-full font-medium hover:bg-green-700 transition"
+        >
+           Send Message
+        </button>
+        <button 
+          onclick="closeWhatsAppModal()" 
+          class="bg-gray-300 text-slate-800 px-6 py-3 rounded-full font-medium hover:bg-gray-400 transition"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openWhatsApp() {
+      document.getElementById('whatsappModal').classList.remove('hidden');
+      document.getElementById('whatsappMessage').focus();
+    }
+
+    function closeWhatsAppModal() {
+      document.getElementById('whatsappModal').classList.add('hidden');
+      document.getElementById('whatsappMessage').value = '';
+    }
+
+    function sendToWhatsApp() {
+      const message = encodeURIComponent(document.getElementById('whatsappMessage').value.trim());
+      if (message) {
+        // Replace +919876543210 with your actual Vida AI agent's WhatsApp-enabled phone number
+        const phoneNumber = "+919580363258"; 
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(whatsappURL, '_blank');
+        closeWhatsAppModal();
+      } else {
+        alert("Please type a message first!");
+      }
+    }
+
+    // Close modal if clicked outside
+    document.getElementById('whatsappModal').addEventListener('click', function(e) {
+      if (e.target === this) closeWhatsAppModal();
+    });
+  </script>
+
 
 
 <!-- Download Section -->
@@ -879,9 +994,7 @@
       <h1 class="text-5xl font-bold text-gray-50">Downloads</h1>
       <p class="text-gray-100 text-2xl mt-3">Access my resume and research papers 📄</p>
     </div>
-
     <div class="max-w-4xl mx-auto flex flex-col sm:flex-row flex-wrap justify-center gap-8 px-6">
-
       <!-- Download Resume -->
       <a href="https://drive.google.com/file/d/1WArbqkSYmNZtoVO4kFMhBE-d6it4Bl34/view?usp=drive_link"
          download
@@ -1212,7 +1325,7 @@
         <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-2xl border-l-4 border-green-600">
           <h3 class="text-xl font-bold text-green-700">High School (10th)</h3>
           <p class="font-semibold">Shri Prem Kumar Shukla, Shrawasti</p>
-          <p class="text-gray-600">2019 – 2020</p>
+          <p class="text-gray-600">2017 – 2018</p>
           <p class="mt-2 text-xl font-bold text-green-600">Percentage: 85.6%</p>
         </div>
       </div>
