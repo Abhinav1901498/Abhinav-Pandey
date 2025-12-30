@@ -35,10 +35,24 @@
   <!-- MOBILE + DESKTOP PERFECT LOADING SCREEN -->
   <div id="loader" class="fixed inset-0 flex flex-col items-center justify-center px-6 space-y-8 z-50">
 
-    <!-- AP Logo - Mobile pe bada, Desktop pe aur bada -->
-    <div class="w-28 h-28 sm:w-32 md:w-36 lg:w-40 bg-gradient-to-br from-red-600 to-red-500 
-                    rounded-full flex items-center justify-center shadow-2xl animate-pulse">
-      <span class="text-white text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter">AP</span>
+    <!-- AP Logo with Image Option -->
+    <!-- Ab yahan image daal sakte ho. Sirf src change karo ya comment/uncomment karo -->
+    <div class="relative w-28 h-28 sm:w-32 md:w-36 lg:w-40 rounded-full overflow-hidden shadow-2xl animate-pulse">
+      
+      <!-- Option 1: Real Profile Image (Recommended - transparent background wala best) -->
+      <img 
+        src="https://raw.githubusercontent.com/Abhinav1901498/Abhinav-Pandey/main/pandey_abhinav-removebg-preview%20(1).png" 
+        alt="Abhinav Pandey" 
+        class="w-full h-full object-cover"
+      >
+      
+      <!-- Option 2: Agar image nahi hai to fallback "AP" text logo (uncomment karo aur upar wala img comment kar do) -->
+      <!--
+      <div class="absolute inset-0 bg-gradient-to-br from-red-600 to-red-500 flex items-center justify-center">
+        <span class="text-white text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter">AP</span>
+      </div>
+      -->
+      
     </div>
 
     <!-- Name - Mobile pe readable, Desktop pe massive -->
@@ -95,7 +109,7 @@
         progress.style.width = width + '%';
         percentText.textContent = width;
       }
-    }, 150); // ~5 seconds total
+    }, 150); // ~15 seconds total (adjust as needed)
   </script>
 </body>
 </html>
