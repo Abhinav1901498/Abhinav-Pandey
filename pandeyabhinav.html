@@ -1,115 +1,1541 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Loading... | Abhinav Pandey</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhinav Pandey - Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { poppins: ['Poppins', 'sans-serif'] },
-          keyframes: {
-            pulse: {
-              '0%, 100%': { transform: 'scale(1)' },
-              '50%': { transform: 'scale(1.15)' }
-            },
-            blink: {
-              '0%, 100%': { opacity: 1 },
-              '50%': { opacity: 0 }
-            }
-          },
-          animation: {
-            pulse: 'pulse 2s infinite',
-            blink: 'blink 0.8s infinite'
-          }
-        }
-      }
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+
+  <!-- AOS Animation Library -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+  />
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
     }
-  </script>
+  </style>
 </head>
-<body class="h-screen bg-gradient-to-br from-white to-amber-50 overflow-hidden font-poppins">
+<body class="bg-gray-100 text-gray-800 m-0">
 
-  <!-- MOBILE + DESKTOP PERFECT LOADING SCREEN -->
-  <div id="loader" class="fixed inset-0 flex flex-col items-center justify-center px-6 space-y-8 z-50">
-
-    <!-- AP Logo with Image Option -->
-    <!-- Ab yahan image daal sakte ho. Sirf src change karo ya comment/uncomment karo -->
-    <div class="relative w-28 h-28 sm:w-32 md:w-36 lg:w-40 rounded-full overflow-hidden shadow-2xl animate-pulse">
-      
-      <!-- Option 1: Real Profile Image (Recommended - transparent background wala best) -->
-      <img 
-        src="https://raw.githubusercontent.com/Abhinav1901498/Abhinav-Pandey/main/pandey_abhinav-removebg-preview%20(1).png" 
-        alt="Abhinav Pandey" 
-        class="w-full h-full object-cover"
-      >
-      
-      <!-- Option 2: Agar image nahi hai to fallback "AP" text logo (uncomment karo aur upar wala img comment kar do) -->
-      <!--
-      <div class="absolute inset-0 bg-gradient-to-br from-red-600 to-red-500 flex items-center justify-center">
-        <span class="text-white text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter">AP</span>
+ <!-- Header Section -->
+<!-- Header + Navbar Combined -->
+<header class="bg-gray-100 text-white fixed top-0 left-0 right-0 bg-white shadow-md z-30">
+  <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6 md:px-20">
+    <!-- Left: Image + Name -->
+    <div class="flex items-center space-x-4">
+      <!-- Profile Image -->
+      <div class="w-16 h-16 rounded-Tringle overflow-hidden border-2 border-white">
+  <img src="https://raw.githubusercontent.com/Abhinav1901498/Abhinav-Pandey/main/abhinav_rgb-removebg-preview.jpeg"
+         alt="Profile" class="w-full h-full object-cover">
       </div>
-      -->
-      
+      <!-- Name & Title -->
+      <div>
+        <h1 class="text-xl text-black font-semibold">Abhinav Pandey</h1>
+        <h2 class="text-xl text-black font-normal">Web Developer</h2>
+      </div>
     </div>
 
-    <!-- Name - Mobile pe readable, Desktop pe massive -->
-    <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-red-600 
-                tracking-tighter text-center leading-tight drop-shadow-2xl">
-      Abhinav Pandey
-    </h1>
+    <!-- Right: Navbar -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="#home" class="text-xl font-bold text-black hover:text-purple-600 transition-colors">Home</a>
+      <a href="#about" class="text-xl font-bold text-black hover:text-purple-600 transition-colors">About</a>
+      <a href="#skills" class="text-xl font-bold text-black hover:text-purple-600 transition-colors">Skills</a>
+      <a href="#certificates" class="text-xl font-bold text-black hover:text-purple-600 transition-colors">Certificates</a>
+      <a href="#portfolio" class="text-xl font-bold text-black hover:text-purple-600 transition-colors">Portfolio</a>
+      <a href="#contact" class="text-xl font-bold text-black hover:text-purple-600 transition-colors">Contact</a>
+    </nav>
 
-    <!-- Gradient Underline - Responsive width -->
-    <div class="w-72 sm:w-80 md:w-96 h-2 md:h-3 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 
-                rounded-full shadow-lg"></div>
-
-    <!-- Title with Blinking Cursor -->
-    <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-purple-700 
-                flex items-center gap-1 whitespace-nowrap">
-      <span>THE  Web Developer</span>
-      <span class="w-1 h-10 md:h-12 bg-pink-600 animate-blink"></span>
-    </div>
-
-    <!-- Progress Bar - Full width on mobile -->
-    <div class="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl h-4 md:h-5 bg-gray-200 
-                rounded-full overflow-hidden shadow-inner mt-12">
-      <div id="progress" 
-           class="h-full w-0 bg-gradient-to-r from-red-600 to-amber-500 rounded-full 
-                  shadow-lg shadow-red-600/60 transition-all duration-500 ease-out"></div>
-    </div>
-
-    <!-- Loading Percentage -->
-    <p class="text-2xl sm:text-3xl font-bold text-gray-700">
-      Loading... <span id="percent" class="text-red-600 font-black">0</span>%
-    </p>
-
-    <!-- Footer Name -->
-    <p class="text-lg sm:text-xl md:text-2xl font-bold text-gray-600 mt-8 opacity-80">
-      Abhinav Pandey
-    </p>
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden p-2 bg-black rounded">
+  <svg class="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+</button>
 
   </div>
 
-  <!-- JavaScript - Smooth Progress + Redirect -->
-  <script>
-    const progress = document.getElementById('progress');
-    const percentText = document.getElementById('percent');
-    let width = 0;
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-blue-500 text-white pb-4 space-y-2 text-center">
+    <a href="#home" class="block py-1 hover:text-purple-300">Home</a>
+    <a href="#about" class="block py-1 hover:text-purple-300">About</a>
+    <a href="#skills" class="block py-1 hover:text-purple-300">Skills</a>
+    <a href="#certificates" class="block py-1 hover:text-purple-300">Certificates</a>
+    <a href="#portfolio" class="block py-1 hover:text-purple-300">Portfolio</a>
+    <a href="#contact" class="block py-1 hover:text-purple-300">Contact</a>
+  </div>
+</header>
+<!-- Full Page Background -->
+<div class="bg-gray-50 min-h-screen flex items-center justify-center py-20 relative overflow-hidden">
 
-    const interval = setInterval(() => {
-      if (width >= 100) {
-        clearInterval(interval);
-        setTimeout(() => {
-          window.location.href = "pandeyabhinav.html";
-        }, 1200);
+  <!-- Decorative Oranges (Solid, No Blur) -->
+  <div class="absolute top-10 right-10 w-40 h-40 bg-orange-400 rounded-full"></div>
+  <div class="absolute bottom-48 left-20 w-20 h-20 bg-orange-400 rounded-full"></div>
+  <div class="absolute bottom-0 left-0 w-64 h-48 md:w-80 md:h-64 bg-orange-500 rounded-tr-full"></div>
+  <div class="absolute bottom-0 right-0 w-64 h-48 md:w-80 md:h-64 bg-orange-500 rounded-tl-full"></div>
+  <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-orange-600 rounded-full animate-pulse"></div>
+  <div class="absolute -top-32 -left-32 w-80 h-80 bg-orange-300 rounded-full animate-pulse"></div>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative bg-gray-900 text-white rounded-3xl shadow-2xl p-10 md:p-16 w-11/12 md:w-4/5 lg:w-3/4 overflow-hidden z-10">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
+      
+      <!-- Left: Image -->
+      <div class="flex-1 flex justify-center items-center" data-aos="fade-left">
+        <img
+          src="https://raw.githubusercontent.com/Abhinav1901498/Abhinav-Pandey/main/abhinav_rgb-removebg-preview.jpeg"
+          alt="Abhinav Pandey"
+          class="w-72 h-72 md:w-96 md:h-96 object-cover rounded-Tringle shadow-2xl transition-transform duration-300 hover:scale-105"
+        />
+      </div>
+
+      <!-- Right: Text -->
+      <div class="flex-1 text-left space-y-6" data-aos="fade-right">
+        <button
+  class="animated-btn text-sm tracking-wider px-10 py-2 rounded-full border border-white/30 text-white font-semibold transition-all duration-500">
+  INTRODUCTION
+</button>
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+          Hello, It's Me <br/>
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-pink-400 animate-pulse">
+            Abhinav Pandey
+          </span>
+        </h1>
+
+        <h2 class="text-2xl md:text-3xl font-semibold">
+          And I am a
+          <span class="text-yellow-300 font-bold animate-pulse">
+            Full Stack Web Developer | Web Designer
+          </span>
+        </h2>
+
+        <p class="text-lg text-gray-200 leading-relaxed">
+          I craft intuitive and visually stunning digital experiences that bridge the gap between
+          design and technology. Every project I work on is driven by creativity, user-centric
+          thinking, and clean, efficient code.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex justify-start gap-6 mt-6 text-3xl">
+          <a href="https://github.com/Abhinav1901498" class="hover:text-gray-300 transition"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/@pandeyabhi3150" class="text-blue-200 hover:text-blue-200 transition"><i class="fab fa-twitter"></i></a>
+          <a href="https://facebook.com/YourUsername" class="text-red-700 hover:text-blue-400 transition"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://linkedin.com/in/abhinav-pandey-b499532b5" class="text-blue-200 hover:text-blue-300 transition"><i class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/9580363258" class="text-green-400 hover:text-green-300 transition"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex justify-start gap-6 mt-6">
+          <a href="#portfolio" class="bg-white text-purple-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">View My Work</a>
+          <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-700 transition">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+
+  <!-- Floating Typing Name Badge -->
+<div class="absolute top-6 right-8 md:right-16 z-20 px-6 py-2 font-bold rounded-full shadow-lg typing-badge">
+  <span class="typing">Abhinav Pandey</span>
+</div>
+
+<style>
+  
+  /* Badge Background + Animation */
+  .typing-badge {
+    background: #ec4899;
+    color: white;
+    animation: bgcolorChange 6s linear infinite;
+  }
+
+  /* Typing Text Animation */
+  .typing {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(14, end) 3s infinite, textColorChange 6s linear infinite;
+  }
+
+  /* Typing keyframes */
+  @keyframes typing {
+    0% { width: 0; }
+    60% { width: 14ch; } 
+    100% { width: 14ch; }  
+  }
+
+  /* Text Color Change */
+  @keyframes textColorChange {
+    0% { color: #ffffff; }
+    25% { color: #ffe259; }
+    75% { color: #7dd3fc; }
+    100% { color: #ffffff; }
+  }
+
+  /* Background Gradient Color Change */
+  @keyframes bgcolorChange {
+    0% { background:  black; }
+    25% { background: darkcyan; }
+    50% { background: darkblue; }
+    100% {background: darkgreen; }
+  }
+  
+  /* Background color animation */
+  @keyframes buttonBgChange {
+    0%   { background-color: rgba(255, 255, 255, 0.15); }
+    25%  { background-color: rgba(255, 221, 87, 0.3); }  /* soft yellow */
+    50%  { background-color: rgba(236, 72, 153, 0.3); }  /* pink */
+    75%  { background-color: rgba(56, 189, 248, 0.3); }  /* sky blue */
+    100% { background-color: rgba(255, 255, 255, 0.15); }
+  }
+
+  .animated-btn {
+    backdrop-filter: blur(8px);
+    animation: buttonBgChange 6s ease-in-out infinite;
+  }
+
+  .animated-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+ </style>
+ </section>
+</div>
+<!-- About Section -->
+<section id="about" 
+  class="relative py-24 overflow-hidden bg-cover bg-center"
+  style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc30F9oWwu9oEclWL56ypI4Rl6MwGXeJP7zw&s');">
+
+  <!-- Dark overlay for readability -->
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+  <!-- Floating Gradient Orbs -->
+  <div class="absolute top-10 left-10 w-64 h-64 bg-orange-400 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-10 right-10 w-72 h-72 bg-purple-500 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+
+  <!-- Content Wrapper -->
+  <div class="relative max-w-6xl mx-auto px-6 lg:px-12">
+
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-extrabold text-white mb-4 tracking-tight">
+        About <span class="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-pink-500">Me</span>
+      </h2>
+      <p class="text-lg text-gray-200 max-w-3xl mx-auto">
+        Passionate about building elegant, user-centered digital experiences with a perfect blend of
+        <span class="text-orange-400 font-semibold">creativity</span> and <span class="text-purple-400 font-semibold">technology</span>.
+      </p>
+    </div>
+
+    <!-- Main Flex Layout -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+
+      <!-- Left: Profile Image with Glow -->
+      <div class="flex-1 flex justify-center relative" data-aos="fade-right">
+        <div class="absolute w-72 h-72 md:w-96 md:h-96 bg-gradient-to-r from-orange-400 to-pink-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+        <img
+          src="https://raw.githubusercontent.com/Abhinav1901498/Abhinav-Pandey/main/pandey_abhinav-removebg-preview (1).png"
+          alt="Abhinav Pandey"
+          class="relative z-10 w-72 h-72 md:w-96 md:h-96 object-cover rounded-Tringle shadow-2xl hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+
+      <!-- Right: Text + Skills -->
+      <div class="flex-1 text-center md:text-left space-y-6" data-aos="fade-left">
+        <h3 class="text-3xl font-bold text-white">
+          Hi, I'm <span class="text-orange-400">Abhinav Pandey</span> 👋
+        </h3>
+        <p class="text-gray-200 leading-relaxed text-lg">
+          A B.Tech student in Computer Science at SRMU, I’m deeply passionate about solving problems
+          through innovation and design. I love blending <span class="text-orange-400 font-semibold">logic</span> with
+          <span class="text-pink-400 font-semibold">creativity</span> to craft web applications that inspire and engage users.
+        </p>
+
+        <!-- Highlight Cards -->
+        <div class="grid grid-cols-2 gap-5 mt-8">
+          <div class="bg-white shadow-xl hover:shadow-orange-200 transition-all duration-300 rounded-2xl p-5 text-center hover:scale-105">
+            <div class="text-3xl mb-2">💻</div>
+            <h4 class="font-semibold text-gray-800">Frontend</h4>
+            <p class="text-sm text-gray-600">React, Tailwind, JavaScript</p>
+          </div>
+
+          <div class="bg-white shadow-xl hover:shadow-orange-200 transition-all duration-300 rounded-2xl p-5 text-center hover:scale-105">
+            <div class="text-3xl mb-2">⚙️</div>
+            <h4 class="font-semibold text-gray-800">Backend</h4>
+            <p class="text-sm text-gray-600">Node.js, Python, APIs</p>
+          </div>
+
+          <div class="bg-white shadow-xl hover:shadow-orange-200 transition-all duration-300 rounded-2xl p-5 text-center hover:scale-105">
+            <div class="text-3xl mb-2">🎨</div>
+            <h4 class="font-semibold text-gray-800">Design</h4>
+            <p class="text-sm text-gray-600">Figma, Adobe XD, UI/UX</p>
+          </div>
+
+          <div class="bg-white shadow-xl hover:shadow-orange-200 transition-all duration-300 rounded-2xl p-5 text-center hover:scale-105">
+            <div class="text-3xl mb-2">☁️</div>
+            <h4 class="font-semibold text-gray-800">Cloud</h4>
+            <p class="text-sm text-gray-600">AWS, Docker, DevOps</p>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="mt-10">
+          <a href="#projects" class="inline-block bg-gradient-to-r from-orange-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300">
+            Explore My Work 🚀
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ <!-- Skills Section -->
+<section id="skills" class="relative py-24 overflow-hidden bg-cover bg-center"
+  style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc30F9oWwu9oEclWL56ypI4Rl6MwGXeJP7zw&s');">
+
+  <!-- Floating Gradient Orbs -->
+  <div class="absolute top-10 left-10 w-64 h-64 bg-orange-400 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-10 right-10 w-72 h-72 bg-purple-500 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+
+  <!-- Content Wrapper -->
+  <div class="relative max-w-6xl mx-auto px-6 lg:px-12 text-center">
+    <h2 class="text-4xl font-bold text-gray-50 mb-6">💡 My Skills</h2>
+    <p class="text-xl text-gray-50 mb-12 max-w-3xl mx-auto">
+      I possess a diverse set of technical skills in web development, design, and programming that help me build creative and efficient solutions.
+    </p>
+
+    <!-- Skills Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-stretch">
+
+      <!-- HTML5 -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-orange-400 to-orange-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fab fa-html5 text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">HTML5</span>
+      </div>
+
+      <!-- CSS3 -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-blue-400 to-blue-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fab fa-css3-alt text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">CSS3</span>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-yellow-400 to-yellow-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fab fa-js text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">JavaScript</span>
+      </div>
+
+      <!-- Tailwind CSS -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-sky-400 to-blue-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fas fa-wind text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">Tailwind CSS</span>
+      </div>
+
+      <!-- React -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-cyan-400 to-blue-500 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fab fa-react text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">React</span>
+      </div>
+
+      <!-- Next.js -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-gray-700 to-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fas fa-layer-group text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">Next.js</span>
+      </div>
+
+      <!-- Node.js -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-green-400 to-green-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fab fa-node-js text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">Node.js</span>
+      </div>
+
+      <!-- Python -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-yellow-400 to-yellow-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fab fa-python text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">Python</span>
+      </div>
+
+      <!-- AI/ML/DL Skills -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-purple-500 to-purple-700 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fas fa-robot text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">AI / ML / DL</span>
+      </div>
+
+      <!-- Git & GitHub -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-red-400 to-red-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fab fa-git-alt text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">Git & GitHub</span>
+      </div>
+
+      <!-- MongoDB -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-green-600 to-green-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fas fa-database text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">MongoDB</span>
+      </div>
+
+      <!-- Express.js -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-gray-500 to-gray-700 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fas fa-server text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">Express.js</span>
+      </div>
+
+      <!-- C Language -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-blue-600 to-blue-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fas fa-code text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">C Lang.</span>
+      </div>
+
+      <!-- MySQL -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-cyan-500 to-cyan-700 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fas fa-database text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">MySQL</span>
+      </div>
+
+      <!-- DBMS -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-indigo-500 to-indigo-700 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fas fa-database text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">DBMS</span>
+      </div>
+
+      <!-- SDLC -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-purple-500 to-purple-700 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fas fa-project-diagram text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">SDLC</span>
+      </div>
+
+      <!-- Data Science -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-teal-400 to-teal-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fas fa-chart-line text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">Data Science</span>
+      </div>
+
+      <!-- DSA -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-lime-400 to-lime-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fas fa-cogs text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">DSA</span>
+      </div>
+
+      <!-- Compiler Design -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-emerald-500 to-emerald-700 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fas fa-code-branch text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">Compiler</span>
+      </div>
+
+      <!-- Operating System -->
+      <div class="flex flex-col justify-between items-center bg-gradient-to-r from-emerald-600 to-emerald-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 h-full min-h-[180px]">
+        <i class="fas fa-desktop text-6xl mb-3 text-white"></i>
+        <span class="font-semibold text-white text-center">Operating System</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Certificates Section -->
+<section id="certificates" class="relative py-24 overflow-hidden bg-cover bg-center"
+  style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc30F9oWwu9oEclWL56ypI4Rl6MwGXeJP7zw&s');">
+
+  <!-- Floating Gradient Orbs -->
+  <div class="absolute top-10 left-10 w-64 h-64 bg-orange-400 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-10 right-10 w-72 h-72 bg-purple-500 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <!-- Content Wrapper -->
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-12 text-center">
+    <h2 class="text-4xl font-bold text-white mb-4">📜 Certifications & Achievements</h2>
+    <p class="text-lg md:text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
+      I have earned several certifications and achievements that showcase my skills and dedication in web development and design.
+    </p>
+
+    <!-- Certificates Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Certificate 1 -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col justify-between p-6 h-full min-h-[260px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-blue-400 to-blue-600 text-white text-3xl">
+          💻
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Web Development Internship</h3>
+        <a href="https://drive.google.com/file/d/1Juh_3SC8eAP2HkQtLnEY2NEYhVVsrVQ8/view?usp=drive_link"
+           target=""
+           class="mt-auto inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-5 py-2 rounded-full font-medium hover:scale-105 transition transform duration-300">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col justify-between p-6 h-full min-h-[260px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-green-400 to-green-600 text-white text-3xl">
+          🤖
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Simple Learn Skill Up Certificate</h3>
+        <a href="https://drive.google.com/file/d/1A6a88VgQMGmjSQ7NK9L4vdm4UnWWBgag/view?usp=drive_link"
+           target=""
+           class="mt-auto inline-block bg-gradient-to-r from-green-500 to-green-700 text-white px-5 py-2 rounded-full font-medium hover:scale-105 transition transform duration-300">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col justify-between p-6 h-full min-h-[260px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-purple-400 to-purple-600 text-white text-3xl">
+          🚀
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Tata Forage Certificate</h3>
+        <a href="https://drive.google.com/file/d/1b6nHRlS9aBTraS3v5HSrVkWBL1hIR_NX/view?usp=drive_link"
+           target=""
+           class="mt-auto inline-block bg-gradient-to-r from-purple-500 to-purple-700 text-white px-5 py-2 rounded-full font-medium hover:scale-105 transition transform duration-300">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- Certificate 4 -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col justify-between p-6 h-full min-h-[260px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-yellow-400 to-yellow-600 text-white text-3xl">
+          🗃️
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">HackerRank SQL (Basic)</h3>
+        <a href="https://drive.google.com/file/d/16GM48QMwm4eo3Bt-5WL9VnnOo7fqO6P6/view?usp=drive_link"
+           target=""
+           class="mt-auto inline-block bg-gradient-to-r from-yellow-500 to-yellow-700 text-white px-5 py-2 rounded-full font-medium hover:scale-105 transition transform duration-300">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- Certificate 5 -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col justify-between p-6 h-full min-h-[260px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-red-400 to-red-600 text-white text-3xl">
+          🛰️
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Bhartiya Antariksh Hackathon</h3>
+        <a href="https://drive.google.com/file/d/1aecj7It6nsHr1z17-VI9mUV7K-oKHl16/view?usp=drive_link"
+           target=""
+           class="mt-auto inline-block bg-gradient-to-r from-red-500 to-red-700 text-white px-5 py-2 rounded-full font-medium hover:scale-105 transition transform duration-300">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- Certificate 6 -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col justify-between p-6 h-full min-h-[260px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-indigo-400 to-indigo-600 text-white text-3xl">
+          🧠
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Quantium Certificate</h3>
+        <a href="https://drive.google.com/file/d/16KeYFw1AVULVgV-vYz8dDT1aIeK5nhZq/view?usp=drive_link"
+           target=""
+           class="mt-auto inline-block bg-gradient-to-r from-indigo-500 to-indigo-700 text-white px-5 py-2 rounded-full font-medium hover:scale-105 transition transform duration-300">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- Certificate 7 -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col justify-between p-6 h-full min-h-[260px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-indigo-400 to-indigo-600 text-white text-3xl">
+          🧠
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Accenture Certificate</h3>
+        <a href="https://drive.google.com/file/d/18ta7OiSPJE9FWOYQyCr_9SSJivoiCxM5/view?usp=drive_link"
+           target=""
+           class="mt-auto inline-block bg-gradient-to-r from-indigo-500 to-indigo-700 text-white px-5 py-2 rounded-full font-medium hover:scale-105 transition transform duration-300">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- Certificate 8 -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col justify-between p-6 h-full min-h-[260px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-indigo-400 to-indigo-600 text-white text-3xl">
+          🧠
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Deloittle Certificate</h3>
+        <a href="https://drive.google.com/file/d/1yezISUoSC4JReuTFes5Ku9r7GS-LK24l/view?usp=drive_link"
+           target=""
+           class="mt-auto inline-block bg-gradient-to-r from-indigo-500 to-indigo-700 text-white px-5 py-2 rounded-full font-medium hover:scale-105 transition transform duration-300">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- Certificate 9 -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col justify-between p-6 h-full min-h-[260px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-indigo-400 to-indigo-600 text-white text-3xl">
+          🧠
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Google My Business - Google</h3>
+        <a href="https://drive.google.com/file/d/1SZQogu_BI5Q-uylTvIf1yBx8vhRWqrho/view?usp=drive_link"
+           target=""
+           class="mt-auto inline-block bg-gradient-to-r from-indigo-500 to-indigo-700 text-white px-5 py-2 rounded-full font-medium hover:scale-105 transition transform duration-300">
+          View Certificate
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio & Projects Section -->
+<section id="portfolio" class="relative py-24 overflow-hidden bg-cover bg-center"
+  style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc30F9oWwu9oEclWL56ypI4Rl6MwGXeJP7zw&s');">
+
+  <!-- Floating Gradient Orbs -->
+  <div class="absolute top-10 left-10 w-64 h-64 bg-orange-400 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-10 right-10 w-72 h-72 bg-purple-500 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <!-- Content Wrapper -->
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-12 text-center">
+    <h2 class="text-4xl font-bold text-white mb-4">🚀 My Portfolio & Projects</h2>
+    <p class="text-lg md:text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
+      A showcase of my most creative and impactful projects that combine design, technology, and innovation.
+    </p>
+
+    <!-- Projects Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Project Card Template -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col p-6 h-full min-h-[220px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-pink-400 to-red-500 text-white text-3xl">
+          📧
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Spam Email Detection</h3>
+        <p class="text-gray-600 text-sm mb-3 flex-grow">
+          A machine learning-based model that classifies emails as spam or legitimate using NLP, Flask, and Jupyter Notebook.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-3 justify-center">
+          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full">Python</span>
+          <span class="px-2 py-0.5 bg-green-100 text-green-800 text-xs rounded-full">Flask</span>
+          <span class="px-2 py-0.5 bg-purple-100 text-purple-800 text-xs rounded-full">Jupyter</span>
+        </div>
+        <a href="https://github.com/Abhinav1901498/Spam-Email-Detection"
+           class="mt-auto inline-block bg-gradient-to-r from-purple-500 to-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition transform duration-300">
+          View Project
+        </a>
+      </div>
+
+      <!-- Chatbot Using Python -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col p-6 h-full min-h-[220px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-blue-400 to-purple-500 text-white text-3xl">
+          🤖
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Face-Emotion-Detection-using-CNN</h3>
+        <p class="text-gray-600 text-sm mb-3 flex-grow">
+         Make a Face Emotion Detection system using Convolutional Neural Networks (CNN) to classify emotions from facial expressions
+        </p>
+        <div class="flex flex-wrap gap-2 mb-3 justify-center">
+          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full">Python</span>
+          <span class="px-2 py-0.5 bg-yellow-100 text-yellow-800 text-xs rounded-full">Cohere API</span>
+          <span class="px-2 py-0.5 bg-green-100 text-green-800 text-xs rounded-full">Flask</span>
+        </div>
+        <a href="https://github.com/Abhinav1901498/Face-Emotion-Detection-using-CNN"
+           class="mt-auto inline-block bg-gradient-to-r from-purple-500 to-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition transform duration-300">
+          View Project
+        </a>
+      </div>
+
+      <!-- Brightness Control System -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col p-6 h-full min-h-[220px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-green-400 to-blue-500 text-white text-3xl">
+          💡
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Brightness Control using OpenCV</h3>
+        <p class="text-gray-600 text-sm mb-3 flex-grow">
+          Hand gesture-based system to adjust screen brightness using OpenCV and Mediapipe.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-3 justify-center">
+          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full">Python</span>
+          <span class="px-2 py-0.5 bg-orange-100 text-orange-800 text-xs rounded-full">OpenCV</span>
+          <span class="px-2 py-0.5 bg-gray-100 text-gray-800 text-xs rounded-full">Mediapipe</span>
+        </div>
+        <a href="https://github.com/Abhinav1901498/Brightness-Control-using-openCV/tree/main"
+           class="mt-auto inline-block bg-gradient-to-r from-purple-500 to-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition transform duration-300">
+          View Project
+        </a>
+      </div>
+
+      <!-- Mouse Tab Controller -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col p-6 h-full min-h-[220px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-indigo-400 to-cyan-500 text-white text-3xl">
+          🖱
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Mouse Tab Controller</h3>
+        <p class="text-gray-600 text-sm mb-3 flex-grow">
+          Operate mouse and tabs using gestures with OpenCV and PyAutoGUI.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-3 justify-center">
+          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full">Python</span>
+          <span class="px-2 py-0.5 bg-orange-100 text-orange-800 text-xs rounded-full">OpenCV</span>
+          <span class="px-2 py-0.5 bg-gray-100 text-gray-800 text-xs rounded-full">PyAutoGUI</span>
+        </div>
+        <a href="https://github.com/Abhinav1901498/Mouse-Tab-Controller-using-open-CV"
+           class="mt-auto inline-block bg-gradient-to-r from-purple-500 to-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition transform duration-300">
+          View Project
+        </a>
+      </div>
+
+      <!-- Virtual Calculator -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col p-6 h-full min-h-[220px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-yellow-400 to-orange-500 text-white text-3xl">
+          🧮
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Virtual Calculator</h3>
+        <p class="text-gray-600 text-sm mb-3 flex-grow">
+          Gesture-driven calculator app built using OpenCV and Mediapipe.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-3 justify-center">
+          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full">Python</span>
+          <span class="px-2 py-0.5 bg-orange-100 text-orange-800 text-xs rounded-full">OpenCV</span>
+        </div>
+        <a href="https://github.com/Abhinav1901498/virtual-Calculator"
+           class="mt-auto inline-block bg-gradient-to-r from-purple-500 to-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition transform duration-300">
+          View Project
+        </a>
+      </div>
+
+      <!-- Weather Prediction Model -->
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col p-6 h-full min-h-[220px]">
+        <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 bg-gradient-to-br from-teal-400 to-sky-500 text-white text-3xl">
+          🌦
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Weather Prediction Model</h3>
+        <p class="text-gray-600 text-sm mb-3 flex-grow">
+          Predicts weather patterns using real-time API data integrated with Flask and Tkinter.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-3 justify-center">
+          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full">Python</span>
+          <span class="px-2 py-0.5 bg-orange-100 text-orange-800 text-xs rounded-full">Weather API</span>
+        </div>
+        <a href="https://github.com/Abhinav1901498/Weather-Prediction-model/tree/main"
+           class="mt-auto inline-block bg-gradient-to-r from-purple-500 to-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition transform duration-300">
+          View Project
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+ <!-- Contact Section -->
+<section id="contact" class="relative py-24 overflow-hidden bg-cover bg-center"
+  style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc30F9oWwu9oEclWL56ypI4Rl6MwGXeJP7zw&s');">
+
+  <!-- Floating Gradient Orbs -->
+  <div class="absolute top-10 left-10 w-64 h-64 bg-orange-400 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-10 right-10 w-72 h-72 bg-purple-500 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+
+  <!-- Content Wrapper -->
+  <div class="relative max-w-6xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16">
+      <h1 class="text-5xl font-bold text-gray-50">Contact</h1>
+      <p class="text-gray-50 text-2xl mt-3">Let’s connect and create something amazing together 🚀</p>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="flex flex-col md:flex-row gap-10">
+
+      <!-- Left: Contact Links -->
+      <div class="bg-gray-900 text-white rounded-2xl shadow-2xl p-8 w-full md:w-1/3 flex flex-col justify-between">
+        <div>
+          <h2 class="text-3xl font-bold mb-4 text-center text-purple-400">Connect With Me</h2>
+
+          <!-- Contact Buttons -->
+          <div class="flex flex-col space-y-6">
+            <a href="https://github.com/Abhinav1901498"
+              class="flex items-center justify-center bg-gray-800 hover:bg-gray-700 rounded-lg py-5 transition transform hover:scale-105 shadow">
+              <i class="fab fa-github mr-3 text-xl"></i> GitHub
+            </a>
+
+            <a href="https://linkedin.com/in/abhinav-pandey-b499532b5"
+              class="flex items-center justify-center bg-blue-700 hover:bg-blue-600 rounded-lg py-5 transition transform hover:scale-105 shadow">
+              <i class="fab fa-linkedin mr-3 text-xl"></i> LinkedIn
+            </a>
+
+            <a href="https://wa.me/9580363258"
+              class="flex items-center justify-center bg-green-600 hover:bg-green-500 rounded-lg py-5 transition transform hover:scale-105 shadow">
+              <i class="fab fa-whatsapp mr-3 text-xl"></i> WhatsApp
+            </a>
+
+            <a href="https://twitter.com"
+              class="flex items-center justify-center bg-blue-500 hover:bg-blue-400 rounded-lg py-5 transition transform hover:scale-105 shadow">
+              <i class="fab fa-twitter mr-3 text-xl"></i> Twitter
+            </a>
+
+            <a href="mailto:pandeyabhi3150@gmail.com"
+              class="flex items-center justify-center bg-red-600 hover:bg-red-500 rounded-lg py-5 transition transform hover:scale-105 shadow">
+              <i class="fas fa-envelope mr-3 text-xl"></i> Email
+            </a>
+          </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex justify-center space-x-6 mt-5">
+          <a href="https://linkedin.com/in/abhinav-pandey-b499532b5">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+              class="w-7 h-7 hover:scale-110 transition" alt="LinkedIn">
+          </a>
+          <a href="https://github.com/Abhinav1901498">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
+              class="w-7 h-7 hover:scale-110 transition" alt="GitHub">
+          </a>
+          <a href="https://wa.me/9580363258">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+              class="w-7 h-7 hover:scale-110 transition" alt="WhatsApp">
+          </a>
+          <a href="https://twitter.com/@pandeyabhi3150">
+            <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png"
+              class="w-7 h-7 hover:scale-110 transition" alt="twitter">
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div class="bg-white rounded-2xl shadow-2xl p-8 w-full md:w-2/3">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-3">Send a Message</h2>
+        <p class="text-gray-500 text-center mb-8">Feel free to reach out for collaborations or just a friendly hello 👋</p>
+
+        <!-- Formspree Form -->
+        <form id="contactForm" action="https://formspree.io/f/mpwyoped" method="POST" class="space-y-6">
+          <div>
+            <label for="name" class="block text-gray-700 font-semibold mb-2">Your Name</label>
+            <input type="text" name="name" id="name" required
+              class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
+          </div>
+
+          <div>
+            <label for="email" class="block text-gray-700 font-semibold mb-2">Your Email</label>
+            <input type="email" name="email" id="email" required
+              class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
+          </div>
+
+          <div>
+            <label for="message" class="block text-gray-700 font-semibold mb-2">Your Message</label>
+            <textarea name="message" id="message" rows="4" required
+              class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+          </div>
+
+          <!-- Hidden redirect (optional) -->
+          <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+
+          <button type="submit"
+            class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition transform hover:scale-105 shadow-lg">
+            Send Message
+          </button>
+
+          <!-- Success Message (Hidden by default) -->
+          <p id="successMessage" class="hidden text-green-600 text-center font-semibold mt-4">
+            ✅ Message sent successfully! Thank you for reaching out.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Popup Script -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('successMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        successMsg.classList.remove('hidden');
+        form.reset();
       } else {
-        width += 1;
-        progress.style.width = width + '%';
-        percentText.textContent = width;
+        alert("❌ There was a problem sending your message. Please try again.");
+      } 
+    });
+  </script>
+</section>
+ 
+  <!-- phone section  -->
+<section class="py-12 px-6" style= "background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc30F9oWwu9oEclWL56ypI4Rl6MwGXeJP7zw&s');">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+      
+      <!-- Profile Image -->
+      <div class="flex-shrink-0">
+        <img 
+          src="https://raw.githubusercontent.com/Abhinav1901498/Abhinav-Pandey/main/pandey_abhinav-removebg-preview%20(1).png" 
+          alt="Abhinav Pandey profile" 
+          class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-lg border-4 border-white"
+        >
+      </div>
+      
+      <!-- Text Content -->
+      <div class="text-white text-center md:text-left">
+        <p class="uppercase tracking-wider text-sm md:text-base opacity-90 mb-2">
+          Test an phone Call & Message
+        </p>
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">
+          Abhinav Pandey
+        </h1>
+        <p class="text-lg md:text-xl mb-8 opacity-90">
+          I can answer any question about Vida.
+        </p>
+        
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <!-- Call Button -->
+          <button 
+            onclick="window.location.href='tel:+1234567890'" 
+            class="bg-white text-slate-800 px-8 py-4 rounded-full font-medium shadow hover:shadow-lg transition flex items-center justify-center gap-3"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.072l-1.886.92a9.5 9.5 0 008.496 8.496l.92-1.886a1 1 0 011.072-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-4C5.373 18 2 14.627 2 10V3z"/>
+            </svg>
+            Call Abhinav
+          </button>
+          
+          <!-- Text Button - Opens WhatsApp with pre-filled message -->
+          <button 
+            onclick="openWhatsApp()" 
+            class="bg-white text-slate-800 px-8 py-4 rounded-full font-medium shadow hover:shadow-lg transition flex items-center justify-center gap-3"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            Text Abhinav
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Modal (for typing message) -->
+  <div id="whatsappModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+      <h2 class="text-2xl font-bold mb-4">Text Abhinav</h2>
+      <p class="text-gray-600 mb-4">Type your message below. On Send, your message will be ready to send to Abhinav</p>
+      <textarea 
+        id="Message" 
+        placeholder="Type your message here..." 
+        class="w-full h-32 p-4 border border-gray-300 rounded-lg mb-4 resize-none"
+      ></textarea>
+      <div class="flex gap-4">
+        <button 
+          onclick="sendToWhatsApp()" 
+          class="bg-green-600 text-white px-6 py-3 rounded-full font-medium hover:bg-green-700 transition"
+        >
+           Send Message
+        </button>
+        <button 
+          onclick="closeWhatsAppModal()" 
+          class="bg-gray-300 text-slate-800 px-6 py-3 rounded-full font-medium hover:bg-gray-400 transition"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openWhatsApp() {
+      document.getElementById('whatsappModal').classList.remove('hidden');
+      document.getElementById('whatsappMessage').focus();
+    }
+
+    function closeWhatsAppModal() {
+      document.getElementById('whatsappModal').classList.add('hidden');
+      document.getElementById('whatsappMessage').value = '';
+    }
+
+    function sendToWhatsApp() {
+      const message = encodeURIComponent(document.getElementById('whatsappMessage').value.trim());
+      if (message) {
+        // Replace +919876543210 with your actual Vida AI agent's WhatsApp-enabled phone number
+        const phoneNumber = "+919580363258"; 
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(whatsappURL, '_blank');
+        closeWhatsAppModal();
+      } else {
+        alert("Please type a message first!");
       }
-    }, 150); // ~15 seconds total (adjust as needed)
+    }
+
+    // Close modal if clicked outside
+    document.getElementById('whatsappModal').addEventListener('click', function(e) {
+      if (e.target === this) closeWhatsAppModal();
+    });
+  </script>
+
+
+
+<!-- Download Section -->
+<section id="portfolio" class="relative py-24 overflow-hidden bg-cover bg-center"
+  style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc30F9oWwu9oEclWL56ypI4Rl6MwGXeJP7zw&s');">
+  
+  <!-- Floating Gradient Orbs -->
+  <div class="absolute top-10 left-10 w-64 h-64 bg-orange-400 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-10 right-10 w-72 h-72 bg-purple-500 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+
+  <!-- Content Wrapper -->
+  <div class="relative max-w-6xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-12">
+      <h1 class="text-5xl font-bold text-gray-50">Downloads</h1>
+      <p class="text-gray-100 text-2xl mt-3">Access my resume and research papers 📄</p>
+    </div>
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row flex-wrap justify-center gap-8 px-6">
+      <!-- Download Resume -->
+      <a href="https://drive.google.com/file/d/1WArbqkSYmNZtoVO4kFMhBE-d6it4Bl34/view?usp=drive_link"
+         download
+         class="flex items-center justify-center bg-purple-600 text-white font-semibold px-8 py-5 rounded-2xl hover:bg-purple-700 transition transform hover:scale-105 shadow-lg">
+        <i class="fas fa-download mr-3 text-xl"></i> Download Resume
+      </a>
+
+      <!-- Download Research Paper 1 -->
+      <a href="https://drive.google.com/file/d/1V0JLtwqYzjGnHUFuk4ZhNiQ_YpwohtU7/view?usp=drive_link"
+         download
+         class="flex items-center justify-center bg-green-600 text-white font-semibold px-8 py-5 rounded-2xl hover:bg-green-700 transition transform hover:scale-105 shadow-lg">
+        <i class="fas fa-file-alt mr-3 text-xl"></i> Research Paper 1
+      </a>
+
+      <!-- Download Research Paper 2 (NEW) -->
+      <a href="https://drive.google.com/file/d/1tcnw_foYK1hoXrM3qSyL__8F3i1B55_Y/view?usp=drive_link"
+         download
+         class="flex items-center justify-center bg-blue-600 text-white font-semibold px-8 py-5 rounded-2xl hover:bg-blue-700 transition transform hover:scale-105 shadow-lg">
+        <i class="fas fa-file-alt mr-3 text-xl"></i> Research Paper 2
+      </a>
+
+    </div>
+  </div>
+</section>
+<!-- Footer Section -->
+<footer class="relative overflow-hidden bg-cover bg-center bg-no-repeat text-white" 
+        style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc30F9oWwu9oEclWL56ypI4Rl6MwGXeJP7zw&s');">
+
+  <!-- Floating Gradient Orbs -->
+  <div class="absolute top-10 left-10 w-64 h-64 bg-yellow-400 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-10 right-10 w-72 h-72 bg-purple-500 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+
+  <!-- Newsletter & Research Paper -->
+  <div class="relative max-w-6xl mx-auto py-16 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
+    
+    <!-- Left: Research Paper -->
+    <div class="md:w-2/3 flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-4">
+      <!-- Profile Image -->
+      <img src="https://raw.githubusercontent.com/Abhinav1901498/Abhinav-Pandey/main/abhinav_rgb-removebg-preview.jpeg"
+           alt="Abhinav Pandey" 
+           class="w-20 h-20 md:w-24 md:h-24 object-cover rounded-Tringle border-2 border-yellow-400 shadow-lg">
+      
+      <!-- Text Info -->
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-2 text-yellow-400">
+          <a href="https://drive.google.com/file/d/1V0JLtwqYzjGnHUFuk4ZhNiQ_YpwohtU7/view?usp=drive_link" 
+             target="" class="hover:text-yellow-300 transition-colors underline">
+            Read My Research Paper 1!
+          </a>
+          <a href="https://drive.google.com/file/d/1tcnw_foYK1hoXrM3qSyL__8F3i1B55_Y/view?usp=drive_link" 
+             target=""class="hover:text-yellow-300 transition-colors underline">
+            Read My Research Paper 2!
+          </a>
+        </h2>
+        <p class="text-gray-200 text-xl md:text-xl leading-relaxed">
+          Explore my latest research paper to discover detailed insights, methodologies, and findings in my field.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: Subscribe Form -->
+    <div class="md:w-1/3 flex justify-center md:justify-end">
+      <input type="email" placeholder="Enter your email" 
+             class="px-5 py-3 rounded-2-md border-none focus:outline-none text-gray-900 w-2/3 shadow-inner">
+      <button class="bg-yellow-400 text-purple-900 font-semibold px-7 py-3 rounded-r-md hover:bg-yellow-300 transition transform hover:scale-105 shadow">
+        Message 
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Bottom Footer -->
+  <div class="max-w-6xl mx-auto py-12 px-6 md:px-12 mt-6 flex flex-col md:flex-row items-start justify-between gap-12 text-sm text-white">
+
+    <!-- Logo + Links -->
+    <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+      <div class="flex-shrink-0">
+        <div class="w-16 h-16 bg-yellow-400 text-purple-900 rounded-full flex items-center justify-center text-2xl font-bold">
+          AP
+        </div>
+      </div>
+      <ul class="space-y-2 md:space-y-0 md:space-x-6 md:flex">
+        <li><a href="#" class="hover:underline hover:text-yellow-400 transition">Books</a></li>
+        <li><a href="#" class="hover:underline hover:text-yellow-400 transition">Authors</a></li>
+        <li><a href="#" class="hover:underline hover:text-yellow-400 transition">Collections</a></li>
+        <li><a href="#" class="hover:underline hover:text-yellow-400 transition">Events</a></li>
+      </ul>
+    </div>
+
+    <!-- Legal -->
+    <ul class="space-y-2">
+      <li><a href="#" class="hover:underline hover:text-yellow-400 transition">Legal warning</a></li>
+      <li><a href="#" class="hover:underline hover:text-yellow-400 transition">Giveaway terms</a></li>
+      <li><a href="#" class="hover:underline hover:text-yellow-400 transition">Legal bases of draws</a></li>
+    </ul>
+
+    <!-- Policies -->
+    <ul class="space-y-2">
+      <li><a href="#" class="hover:underline hover:text-yellow-400 transition">Return policy</a></li>
+      <li><a href="#" class="hover:underline hover:text-yellow-400 transition">Cookies policy</a></li>
+      <li><a href="#" class="hover:underline hover:text-yellow-400 transition">Privacy policy</a></li>
+    </ul>
+
+    <!-- Social & Copyright -->
+    <div class="flex flex-col items-start md:items-end gap-4">
+      <p>© Abhinav Pandey 2025</p>
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-yellow-400 transition"><i class="fab fa-twitter text-xl"></i></a>
+         <a href="#" class="hover:text-yellow-400 transition"><i class="fab fa-facebook-f text-xl"></i></a>
+         <a href="#" class="hover:text-yellow-400 transition"><i class="fab fa-linkedin text-xl"></i></a>
+         <a href="#" class="hover:text-yellow-400 transition"><i class="fab fa-github text-xl"></i></a>
+          </div>
+        </div>
+       </div>
+    </footer>
+
+<!-- Custom Tailwind Animation Classes -->
+<style>
+  @keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes spin-slow-reverse {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 60s linear infinite;
+  }
+  .animate-spin-slow-reverse {
+    animation: spin-slow-reverse 90s linear infinite;
+  }
+</style>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    
+    AOS.init({ duration: 1000, once: true });
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+
+
+  <!-- Academic Section Button (Floating + Navbar Entry) -->
+<style>
+  #academicBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 28px;
+    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  #academicBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.6);
+  }
+
+  /* Academic Modal */
+  #academicModal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  .modal-content {
+    background: white;
+    border-radius: 24px;
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    animation: modalPop 0.5s ease-out;
+  }
+  @keyframes modalPop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 34px;
+    cursor: pointer;
+    color: #aaa;
+    transition: 0.3s;
+  }
+  .close-btn:hover { color: #e11d48; }
+
+/* Mobile Optimization */
+  @media (max-width: 768px) {
+    #academicBtn {
+      width: 56px;
+      height: 56px;
+      font-size: 24px;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .modal-content {
+      padding: 24px 20px;      /* कम padding मोबाइल में */
+      margin: 10px;            /* स्क्रीन के किनारे से थोड़ा गैप */
+      border-radius: 18px;
+      max-height: 95vh;        /* स्क्रीन से बाहर न जाए */
+      overflow-y: auto;
+    }
+
+    /* Grid को mobile में single column कर दो */
+    .grid.md\:grid-cols-2 {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* Education cards थोड़ा compact */
+    .space-y-8 > div {
+      padding: 20px 16px;
+    }
+
+    /* Contact card buttons को थोड़ा छोटा करो मोबाइल में */
+    .bg-green-500, .bg-red-600, .bg-blue-700 {
+      padding: 14px 20px !important;
+      font-size: 15px;
+    }
+
+    /* Heading size mobile में थोड़ा कम */
+    h2.text-4xl.md\:text-5xl {
+      font-size: 2.2rem;
+    }
+    h3.text-2xl {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #academicBtn {
+      width: 52px;
+      height: 52px;
+      font-size: 22px;
+      bottom: 15px;
+      right: 15px;
+    }
+
+    .modal-content {
+      padding: 20px 16px;
+      border-radius: 16px;
+    }
+
+    h2.text-4xl.md\:text-5xl {
+      font-size: 2rem;
+    }
+
+    .close-btn {
+      font-size: 30px;
+      top: 10px;
+      right: 15px;
+    }
+  }
+
+  /* Extra smooth scrolling on mobile */
+  #academicModal {
+    -webkit-overflow-scrolling: touch;
+  }
+
+</style>
+
+<!-- Floating Academic Button -->
+<button id="academicBtn" title="My Academic Journey" class="text-black">
+  <i class="fas fa-graduation-cap"></i>
+</button>
+
+<!-- Academic Modal -->
+<div id="academicModal"  aria-label="Academic Journey">
+  <div class="modal-content text-gray-800">
+    <span class="close-btn">&times;</span>
+    
+    <div class="text-center mb-10">
+      <h2 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+        Academic Journey
+      </h2>
+      <p class="text-xl text-gray-600 mt-3">Education • Achievements • Excellence</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Education Timeline -->
+      <div class="space-y-8">
+        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-2xl border-l-4 border-purple-600">
+          <h3 class="text-2xl font-bold text-purple-700">B.Tech in Computer Science & Engineering</h3>
+          <p class="text-lg font-semibold">Shri Ramswaroop Memorial University (SRMU), Lucknow</p>
+          <p class="text-gray-600">2022 – 2026 (Pursuing)</p>
+          <p class="mt-3 text-2xl font-bold text-green-600">CGPA: 8/ 10</p>
+        </div>
+
+        <div class="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-2xl border-l-4 border-blue-600">
+          <h3 class="text-xl font-bold text-blue-700">Intermediate (12th) - PCM</h3>
+          <p class="font-semibold"> Shri Prem Kumar Shukla, Shrawasti</p>
+          <p class="text-gray-600">2021 – 2022</p>
+          <p class="mt-2 text-xl font-bold text-green-600">Percentage: 75.4%</p>
+        </div>
+
+        <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-2xl border-l-4 border-green-600">
+          <h3 class="text-xl font-bold text-green-700">High School (10th)</h3>
+          <p class="font-semibold">Shri Prem Kumar Shukla, Shrawasti</p>
+          <p class="text-gray-600">2017 – 2018</p>
+          <p class="mt-2 text-xl font-bold text-green-600">Percentage: 85.6%</p>
+        </div>
+      </div>
+
+      <!-- Quick Contact Card -->
+      <div class="bg-gradient-to-br from-purple-600 to-pink-600 text-white p-8 rounded-2xl flex flex-col justify-between h-full">
+        <div>
+          <h3 class="text-3xl font-bold mb-6">Let's Connect!</h3>
+          <p class="text-lg opacity-90 mb-8">Interested in collaboration, internship, or just want to say hi?</p>
+          
+          <div class="space-y-4">
+            <a href="https://wa.me/9580363258" target="_blank" 
+               class="block bg-green-500 hover:bg-green-400 text-white font-bold py-4 px-6 rounded-xl text-center transition transform hover:scale-105 shadow-lg">
+              <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+              Chat on WhatsApp
+            </a>
+            
+            <a href="mailto:pandeyabhi3150@gmail.com" 
+               class="block bg-red-600 hover:bg-red-500 text-white font-bold py-4 px-6 rounded-xl text-center transition transform hover:scale-105 shadow-lg">
+              <i class="fas fa-envelope mr-3 text-2xl"></i>
+              Send Email
+            </a>
+            
+            <a href="https://linkedin.com/in/abhinav-pandey-b499532b5" target="_blank"
+               class="block bg-blue-700 hover:bg-blue-600 text-white font-bold py-4 px-6 rounded-xl text-center transition transform hover:scale-105 shadow-lg">
+              <i class="fab fa-linkedin mr-3 text-2xl"></i>
+              View LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <p class="text-center mt-8 text-sm opacity-80">
+          I'm open to internships, freelance projects & research collaborations
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center mt-10">
+      <p class="text-gray-600 italic">“Education is not the learning of facts, but the training of the mind to think.”</p>
+ Tuesday
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Academic Modal -->
+<script>
+  const academicBtn = document.getElementById('academicBtn');
+  const academicModal = document.getElementById('academicModal');
+  const closeBtn = document.querySelector('#academicModal .close-btn');
+
+  academicBtn.addEventListener('click', () => {
+    academicModal.style.display = 'flex';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    academicModal.style.display = 'none';
+  });
+
+  // Close when clicking outside
+  window.addEventListener('click', (e) => {
+    if (e.target === academicModal) {
+      academicModal.style.display = 'none';
+    }
+  });
+</script>
+ 
+<!-- Floating Social Icons – Thoda Upar & Bilkul Safe -->
+<div class="fixed bottom-24 sm:bottom-16 md:bottom-20 lg:bottom-24 right-4 sm:right-6 z-50 
+            flex flex-col gap-5 items-center">
+
+  <!-- GitHub -->
+  <a href="https://github.com/Abhinav1901498" target="_blank" aria-label="GitHub"
+     class="group relative bg-gray-900 hover:bg-gray-800 text-white w-14 h-14 rounded-full 
+            flex items-center justify-center shadow-2xl hover:shadow-gray-600 
+            transform hover:scale-115 transition-all duration-300">
+    <i class="fab fa-github text-2xl"></i>
+    <span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-black text-white text-sm font-medium px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+      GitHub
+    </span>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/abhinav-pandey-b499532b5" target="_blank" aria-label="LinkedIn"
+     class="group relative bg-[#0077b5] hover:bg-[#006199] text-white w-14 h-14 rounded-full 
+            flex items-center justify-center shadow-2xl hover:shadow-blue-900 
+            transform hover:scale-115 transition-all duration-300">
+    <i class="fab fa-linkedin-in text-2xl"></i>
+    <span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-black text-white text-sm font-medium px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+      LinkedIn
+    </span>
+  </a>
+
+  <!-- WhatsApp – Fixed Link + Slightly Bigger & Prominent -->
+  <a href="https://wa.me/919580363258" target="_blank" aria-label="WhatsApp"
+     class="group relative bg-[#25d366] hover:bg-[#128c7e] text-white w-14 h-14 rounded-full 
+            flex items-center justify-center shadow-2xl hover:shadow-blue-900 
+            transform hover:scale-115 transition-all duration-300">
+    <i class="fab fa-whatsapp text-2xl"></i>
+    <span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-black text-white text-sm font-medium px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+       WhatsApp
+    </span>
+  </a>
+</div>
+
+
+<!-- WhatsApp Message Modal (सबसे ऊपर खुलेगा - z-[1000]) -->
+  <div id="whatsappModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-end justify-center z-[1000] p-4 md:items-center">
+    <div class="bg-white rounded-t-3xl md:rounded-3xl w-full max-w-md shadow-2xl">
+      <div class="p-6 pb-4 border-b border-gray-200">
+        <div class="flex justify-between items-center">
+          <h2 class="text-2xl font-bold">Text Abhinav</h2>
+          <button onclick="closeWhatsAppModal()" class="text-3xl text-gray-500 hover:text-gray-700">&times;</button>
+        </div>
+        <p class="text-gray-600 mt-2">Type your message. On Send, WhatsApp will open.</p>
+      </div>
+      <div class="p-6 pt-4">
+        <textarea id="whatsappMessage" placeholder="Type your message here..." class="w-full h-40 p-4 border border-gray-300 rounded-xl mb-6 resize-none focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+        <div class="flex gap-4">
+          <button onclick="sendToWhatsApp()" class="flex-1 bg-green-600 text-white py-4 rounded-xl font-semibold hover:bg-green-700 text-lg">Send Message</button>
+          <button onclick="closeWhatsAppModal()" class="flex-1 bg-gray-300 text-gray-800 py-4 rounded-xl font-semibold hover:bg-gray-400 text-lg">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phone Section Modal (लोगो क्लिक पर खुलेगा - z-[900]) -->
+  <div id="phoneSectionModal" class="fixed inset-0 bg-black bg-opacity-70 hidden flex items-center justify-center z-[900] p-4">
+    <div class="relative bg-cover bg-center rounded-3xl shadow-2xl max-w-4xl w-full" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc30F9oWwu9oEclWL56ypI4Rl6MwGXeJP7zw&s');">
+      <button onclick="closePhoneSection()" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10">&times;</button>
+      <div class="p-8 md:p-12 text-white">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="flex-shrink-0">
+            <img src="https://raw.githubusercontent.com/Abhinav1901498/Abhinav-Pandey/main/pandey_abhinav-removebg-preview%20(1).png" 
+                 alt="Abhinav Pandey" 
+                 class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-lg border-4 border-white">
+          </div>
+          <div class="text-center md:text-left">
+            <p class="uppercase tracking-wider text-sm md:text-base opacity-90 mb-2">Test a phone Call & Message</p>
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Abhinav Pandey</h1>
+            <p class="text-lg md:text-xl mb-8 opacity-90">I can answer any question about Vida.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <a href="tel:+919580363258" class="bg-white text-slate-800 px-8 py-4 rounded-full font-medium shadow hover:shadow-lg transition flex items-center justify-center gap-3">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.072l-1.886.92a9.5 9.5 0 008.496 8.496l.92-1.886a1 1 0 011.072-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-4C5.373 18 2 14.627 2 10V3z"/></svg>
+                Call Abhinav
+              </a>
+              <button onclick="openWhatsApp()" class="bg-white text-slate-800 px-8 py-4 rounded-full font-medium shadow hover:shadow-lg transition flex items-center justify-center gap-3">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                Text Abhinav
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- सिर्फ़ लोगो आइकन (फ्लोटिंग, राइट साइड में बीच में) -->
+  <div class="fixed top-1/2 -translate-y-1/2 right-4 sm:right-6 z-50">
+    <button onclick="togglePhoneSection()" class="group relative block">
+      <img src="https://raw.githubusercontent.com/Abhinav1901498/Abhinav-Pandey/main/pandey_abhinav-removebg-preview%20(1).png"
+           alt="Abhinav Pandey"
+           class="w-16 h-16 rounded-full object-cover shadow-2xl border-4 border-white hover:scale-110 transition-transform duration-300">
+      <span class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-black text-white text-sm font-medium px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+        Click for Call & Message
+      </span>
+    </button>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Phone Section Toggle
+    function togglePhoneSection() {
+      document.getElementById('phoneSectionModal').classList.toggle('hidden');
+    }
+    function closePhoneSection() {
+      document.getElementById('phoneSectionModal').classList.add('hidden');
+    }
+
+    // WhatsApp Modal
+    function openWhatsApp() {
+      document.getElementById('whatsappModal').classList.remove('hidden');
+      // Phone Section को अस्थायी रूप से disable करें ताकि बैकग्राउंड क्लिक न हो
+      document.getElementById('phoneSectionModal').style.pointerEvents = 'none';
+      setTimeout(() => {
+        document.getElementById('whatsappMessage').focus();
+      }, 300);
+    }
+    function closeWhatsAppModal() {
+      document.getElementById('whatsappModal').classList.add('hidden');
+      document.getElementById('whatsappMessage').value = '';
+      document.getElementById('phoneSectionModal').style.pointerEvents = 'auto';
+    }
+    function sendToWhatsApp() {
+      const message = encodeURIComponent(document.getElementById('whatsappMessage').value.trim());
+      if (message) {
+        window.open(`https://wa.me/+919580363258?text=${message}`, '_blank');
+        closeWhatsAppModal();
+      } else {
+        alert("Please type a message first!");
+      }
+    }
+
+    // बाहर क्लिक करने पर बंद
+    document.getElementById('whatsappModal').addEventListener('click', e => {
+      if (e.target === e.currentTarget) closeWhatsAppModal();
+    });
+    document.getElementById('phoneSectionModal').addEventListener('click', e => {
+      if (e.target === e.currentTarget) closePhoneSection();
+    });
   </script>
 </body>
 </html>
