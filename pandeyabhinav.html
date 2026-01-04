@@ -893,7 +893,7 @@
         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
           <!-- Call Button -->
           <button 
-            onclick="window.location.href='tel:+1234567890'" 
+            onclick="window.location.href='tel:+9580363258" 
             class="bg-white text-slate-800 px-8 py-4 rounded-full font-medium shadow hover:shadow-lg transition flex items-center justify-center gap-3"
           >
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
@@ -927,7 +927,7 @@
       <h2 class="text-2xl font-bold mb-4">Text Abhinav</h2>
       <p class="text-gray-600 mb-4">Type your message below. On Send, your message will be ready to send to Abhinav</p>
       <textarea 
-        id="googlemessageMessage" 
+        id="whatsappMessage" 
         placeholder="Type your message here..." 
         class="w-full h-32 p-4 border border-gray-300 rounded-lg mb-4 resize-none"
       ></textarea>
@@ -951,12 +951,12 @@
   <script>
     function openWhatsApp() {
       document.getElementById('whatsappModal').classList.remove('hidden');
-      document.getElementById('googlemessageMessage').focus();
+      document.getElementById('whatsappMessage').focus();
     }
 
     function closeWhatsAppModal() {
       document.getElementById('whatsappModal').classList.add('hidden');
-      document.getElementById('googlemessageMessage').value = '';
+      document.getElementById('whatsappMessage').value = '';
     }
 
     function sendToWhatsApp() {
